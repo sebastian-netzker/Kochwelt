@@ -156,10 +156,3 @@ input[id="text"]::-webkit-input-placeholder {
     }
 }
 
-.footer {
-    position: absolute;
-    width: 100vw;
-    height: 8vh;
-    bottom: 0;
-    background-color: rgb(64, 59, 59);
-}

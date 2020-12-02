@@ -10,6 +10,7 @@
       href="bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" type="text/css" href="css/style-recepy.css" />
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/recepy.js"></script>
     <script src="js/recepy-list.js"></script>
 
@@ -17,20 +18,23 @@
 </head>
 <body onload="load(), loadRecepyList()">
 
+    <div class="navigation-bar">
 
-<h2 class="headline"><img class="img-logo" src="img/logo_small.png" alt="">  Kochwelt</h2>
-<div class="menu">
+        <img class="logo" src="img/logo.png">
 
-    
+        <nav class="navigation-menu">
 
-      <a style="font-weight: bold;"  href="recepy.html">Start</a>
-      <a href="recepy-list.html">Rezept Allgemein</a>
-      <a href="#">Rezept Hinzufügen</a>
-      <a href="#"
-        >Kontakt</a>
+            <a href="index.html"> Start </a>&nbsp; | &nbsp;
+            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+        </nav>
+        
+
     </div>
 
-    <hr class="line"  size="1" color="grey" top="30px" />
+<div style="margin-top: 130px;">
 
     <h1>
         Übersicht aller Rezepte
@@ -40,7 +44,7 @@
     <div class="recepy-flexbox" id="category">
 
     </div>
-
+</div>
     <footer>
 
         <div class="footer-child">
@@ -49,7 +53,7 @@
      </div>
 
      <div class="footer-child">
-         <a href="#">Impressum</a>
+         <a href="imprint.html">Impressum</a>
           <a href="#">Datenschutz</a>
      </div>
 

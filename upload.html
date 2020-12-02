@@ -1,17 +1,24 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <title> Kochwelt </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         form {
             display: flex;
             flex-direction: column;
         }
-
-        div {
+        .uploaddiv{
+            margin-top: 130px;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
+
     </style>
     <script>
 
@@ -67,6 +74,20 @@
 </head>
 
 <body>
+    <div class="navigation-bar">
+
+        <img class="logo" src="img/logo.png">
+
+        <nav class="navigation-menu">
+
+            <a href="index.html"> Start </a>&nbsp; | &nbsp;
+            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+        </nav>
+    </div>
+    <div class="uploaddiv">
     <h1>Rezept abschicken</h1>
     <form action="" id="recepyform" class="recepyform">
         <label for="recepy">Gib deinem Rezept einen Namen:</label>
@@ -111,6 +132,7 @@
 
         <input type="submit">
     </form>
+    </div>
 </body>
 
 </html>

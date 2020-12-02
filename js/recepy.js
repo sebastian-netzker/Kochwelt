@@ -47,7 +47,7 @@ function createRecepyInfo(
  
 
   let RecepyInfo = `<div class="recepy">
-     <img src =${picture_url}>
+     <img class="img" src =${picture_url}>
      <h3>${recepy_name}</h3>
      <h6>${category}</h6>
      <hr class="hr-recepy">
