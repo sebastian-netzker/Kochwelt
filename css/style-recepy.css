@@ -1,0 +1,265 @@
+body {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #e7e4e493;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.menu {
+    top: -20px;
+    left: 0px;
+    right: 0px;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headline {
+    position: relative;
+    left: 35px;
+    top: 10px;
+    color: rgb(141, 137, 137);
+    font-weight: bold;
+}
+
+.menu a {
+    position: relative;
+    color: rgb(131, 128, 128);
+    font-size: 20px;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.menu a:hover {
+    font-weight: bold;
+}
+
+.line {
+    position: relative;
+    top: 0px;
+}
+
+h1 {
+    color: grey;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+h2 {
+    color: grey;
+}
+
+img {
+    width: 550px;
+    height: 350px;
+    object-fit: cover;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.img-icon {
+    height: 65px;
+    width: 65px;
+    margin-right: 35px;
+    object-fit: cover;
+    margin-left: 25px;
+}
+
+.img-icon-recepylist {
+    height: 50px;
+    width: 50px;
+    margin-left: 15px;
+    object-fit: cover;
+}
+
+.img-logo {
+    object-fit: cover;
+    width: 70px;
+    height: 75px;
+}
+
+.category {
+    padding-bottom: 40px;
+    padding-left: 20px;
+}
+
+footer {
+    padding: 40px;
+    margin-top: 40px;
+    background-color: rgba(197, 196, 196, 0.322);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 30px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: rgb(126, 126, 126);
+}
+
+.recepy {
+    padding-left: 10px;
+    background-color: rgba(224, 205, 116, 0.192);
+    width: 550px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.recepy-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recepy-flexbox {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+h3 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+h6 {
+    color: white;
+    background-color: rgba(74, 184, 30, 0.74);
+    width: 45%;
+    text-align: center;
+    margin-left: 145px;
+}
+
+button {
+    position: relative;
+    margin-bottom: 10px !important;
+    left: 160px;
+    width: 200px;
+}
+
+p {
+    color: rgba(74, 184, 30, 0.74);
+    padding-right: 30px;
+    font-size: 20px;
+}
+
+.hr-recepy {
+    width: 95%;
+}
+
+.img-recepylist {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recepylist-child {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.p-recepylist {
+    background-color: rgba(224, 205, 116, 0.192);
+}
+
+.h1-recepylist {
+    color: black;
+    padding-top: 20px;
+    font-size: 50px;
+}
+
+.h3-recepylist {
+    font-size: 30px;
+    padding-left: 70px;
+}
+
+.p-number-ingridient1 {
+    color: black;
+    padding-left: 40px;
+    font-size: 25px;
+}
+
+.p-number-ingridient2 {
+    padding-left: 0px;
+    color: black;
+    font-size: 25px;
+}
+
+.div-number-ingridient {
+    display: flex;
+    padding-left: 90px;
+}
+
+.btn-recepylist {
+    width: 75px;
+    left: 0px;
+    top: 5px;
+}
+
+.div-ingridient {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-items: center;
+}
+
+.span-white {
+    background-color: rgba(235, 232, 232, 0.699);
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+    width: 80%;
+}
+
+.span-grey {
+    background-color: rgba(190, 188, 188, 0.527);
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 5px;
+    width: 80%;
+}
+
+.div-preperation {
+    padding-left: 40px;
+}
+
+.p-preperation {
+    color: black;
+    font-size: 20px;
+}
+
+.div-createrecepy {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.img-profile {
+    padding-left: 100px;
+    width: 225px;
+    height: 150px;
+    object-fit: cover;
+    border: 20px black;
+}
+
+.div-flexbox {
+    display: flex;
+}
+
+.h3-creatorrecepy {
+    padding-left: 30px;
+    padding-top: 45px;
+    font-size: 25px;
+}

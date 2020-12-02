@@ -1,0 +1,165 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+.navigation-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}
+
+.navigation-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-menu a {
+    color: grey;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 225ms ease-in-out;
+    border-bottom: 4px solid transparent;
+}
+
+.navigation-menu a:hover {
+    color: rgb(57, 146, 43);
+    transition: all 225ms ease-in-out;
+    border-bottom: 4px solid rgb(57, 146, 43);
+    font-weight: bold;
+}
+
+.search-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-box {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(57, 146, 43);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.search-box:hover>.search-input {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+    background: white;
+}
+
+input[id="text"]::-webkit-input-placeholder {
+    color: white;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    float: right;
+    border-radius: 50%;
+    background-color: rgb(57, 146, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.headline-slide-show {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-show {
+    overflow: hidden;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-bar {
+    position: relative;
+    width: 250%;
+    margin: 0;
+    left: 0;
+    animation: 20s slide-show infinite;
+}
+
+.slide-bar img {
+    width: 19%;
+    float: left;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+@keyframes slide-show {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+.footer {
+    position: absolute;
+    width: 100vw;
+    height: 8vh;
+    bottom: 0;
+    background-color: rgb(64, 59, 59);
+}

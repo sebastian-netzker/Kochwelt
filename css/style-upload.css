@@ -1,0 +1,73 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a {
+    padding-left: 2rem;
+}
+
+.bg1 {
+    padding: 1rem 5rem 2.5rem;
+}
+
+.bg2 {
+    background-color: lightgrey;
+    padding: 1rem 5rem 2.5rem;
+    ;
+}
+
+.logo {
+    height: 3rem;
+    object-fit contain;
+}
+
+.header {
+    height: 5rem;
+    padding: 0 5rem;
+}
+
+.teaser1 {
+    height: 15rem;
+    border-radius: 5px;
+    object-fit contain;
+}
+
+.teasertext {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.teaser2 {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.teaserlink {
+    background-color: #008000;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 3rem;
+}
+
+.padding2left {
+    padding-left: 2rem;
+}
+
+.padding2right {
+    padding-right: 2rem;
+}
+
+.padding2bottom {
+    padding-bottom: 2rem;
+}
