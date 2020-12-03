@@ -30,8 +30,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 move_uploaded_file($_FILES['recepy']['tmp_name']['image'], "../img/".$newfile);
             }
         }
-        echo $txt;
-        //header("Location: " . $redirect); 
+        header("Location: " . $redirect); 
         exit;
     default: //Reject any non POST or OPTIONS requests.
         header("Allow: POST", true, 405);
