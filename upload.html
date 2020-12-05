@@ -20,46 +20,35 @@
             align-items: center;
         }
 
-        .addlist{
+        fieldset {
             display: flex;
             flex-direction: column;
         }
-
     </style>
     <script>
 
-        function createEntry(where, what, name) {
+        function createEntry(parentNodeId,prototypeId) {
 
-            let node = document.getElementById(where);
-            let counter = node.childElementCount / 2 + 1;
+            // Clone node
 
-            // Create Label
+            parentNode = document.getElementById(parentNodeId);
+            childNode = document.getElementById(prototypeId).cloneNode('deep');
 
-            let label = document.createElement('label');
-            label.setAttribute('for', what + counter);
-            label.innerText = name + ' ' + counter;
+            // Clean values and id (only first level of children is cleaned)
+            
+            childNode.removeAttribute('id');
+            childNode.value = '';
 
-            // Create Input
-
-            let input = document.createElement('input');
-            input.setAttribute('type', 'text');
-            input.setAttribute('name', what + counter);
-            input.setAttribute('id', what + counter);
-
-            // Append Label and Input
-
-            node.appendChild(label);
-            node.appendChild(input);
-
-        }
-
-        function form2object(form) {
-
-            let object = {};
-            for (let i = 0; i < form.length; i++) {
-                object[form[i].id] = form[i].value
+            if (childNode.children.length > 0) {
+                for (let i = 0; i < childNode.children.length; i++) {
+                    childNode.children[i].value = '';
+                }
             }
-            return object;
+
+            // Insert
+
+            lastChild = parentNode.children[parentNode.children.length - 1]
+            parentNode.insertBefore(childNode, lastChild);
 
         }
 
@@ -116,47 +105,56 @@
         </nav>
     </div>
     <div class="uploaddiv">
-        <h1>Rezept abschicken</h1>
-        <form action="" id="recepyform" class="recepyform">
-            <label for="recepy">Gib deinem Rezept einen Namen:</label>
-            <input type="text" name="recepy" id="recepy">
-
+        <h1>Rezept einreichen</h1>
+        <form action="" id="recepyform">
+            <input type="text" name="recepy" placeholder="Rezeptname">
             <label for="image">Füge ein Bild hinzu</label>
-            <input type="file" name="image" id="image">
-            <div id="ingredientlist" class="addlist">
-                <label for="ingredient1">Zutat 1</label>
-                <input type="text" name="ingredient1" id="ingredient1">
-            </div>
-            <input type="button" value="Zutat hinzufügen" onclick="createEntry('ingredientlist','ingredient','Zutat')">
+            <input type="file" name="image">
+            <fieldset id="ingredients">
+                <label for="ingredients">Zutaten</label>
+                <fieldset id="ingredientsPrototype">
+                    <input type="text" name="ingredient" placeholder="Zutat">
+                    <input type="text" name="portion" placeholder="Menge">
+                    <select name="unit">
+                        <option></option>
+                        <option>g</option>
+                        <option>l</option>
+                        <option>ml</option>
+                        <option>TL</option>
+                        <option>EL</option>
+                        <option>Stück</option>
+                        <option>Prise</option>
+                    </select>
+                </fieldset>
+                <input type="button" value="Zutat hinzufügen" onclick="createEntry('ingredients','ingredientsPrototype')">
+            </fieldset>
 
-            <span>Schwierigkeit:</span>
-            <input type="radio" name="difficulty" id="difficulty_easy">
-            <label for="difficulty_easy">Einfach</label>
-            <input type="radio" name="difficulty" id="difficulty_intermediate">
-            <label for="difficulty_intermediate">Mittel</label>
-            <input type="radio" name="difficulty" id="difficulty_difficult">
-            <label for="difficulty_difficult">Schwer</label>
 
-            <label for="preparation_time">Zubereitungszeit in Minuten:</label>
-            <input type="text" name="preparation_time" id="preparation_time">
 
-            <label for="calories">Kalorien:</label>
-            <input type="text" name="calories" id="calories">
 
-            <label for="category">Kategorie</label>
-            <input type="text" name="category" id="category">
+            <label for="difficulty">Schwierigkeit</label>
+            <select name="difficulty">
+                <option>Leicht</option>
+                <option>Mittel</option>
+                <option>Schwer</option>
+            </select>
 
-            <label for="price">Preis</label>
-            <input type="text" name="price" id="price">
-            <div id="preparationlist" class="addlist">
-                <label for="preparation1">Schritt 1</label>
-                <input type="text" name="preparation1" id="ingredient1">
-            </div>
-            <input type="button" value="Schritt hinzufügen"
-                onclick="createEntry('preparationlist','preparation','Schritt')">
+            <input type="text" name="preparation_time" placeholder="Zubereitungszeit in Minuten">
 
-            <label for="creator">Wie sollen wir dich nennen?</label>
-            <input type="text" name="creator" id="creator">
+            <input type="text" name="calories" placeholder="Kalorien">
+
+            <input type="text" name="category" placeholder="Kategorie">
+
+            <input type="text" name="price" placeholder="Preis">
+
+            <fieldset id="preparation">
+                <label for="ingredients">Zubereitung</label>
+                <input type="text" name="preparation" placeholder="Zubereitungsschritt" id="preparationPrototype">
+                <input type="button" value="Schritt hinzufügen" onclick="createEntry('preparation','preparationPrototype')">
+            </fieldset>
+
+
+            <input type="text" name="creator" placeholder="Ersteller*in">
 
             <input type="submit">
         </form>
