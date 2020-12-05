@@ -27,7 +27,7 @@
     </style>
     <script>
 
-        function createEntry(parentNodeId,prototypeId) {
+        function createEntry(parentNodeId, prototypeId) {
 
             // Clone node
 
@@ -35,7 +35,7 @@
             childNode = document.getElementById(prototypeId).cloneNode('deep');
 
             // Clean values and id (only first level of children is cleaned)
-            
+
             childNode.removeAttribute('id');
             childNode.value = '';
 
@@ -47,8 +47,54 @@
 
             // Insert
 
-            lastChild = parentNode.children[parentNode.children.length - 1]
+            lastChild = parentNode.children[parentNode.children.length - 2]
             parentNode.insertBefore(childNode, lastChild);
+
+        }
+
+        function removeEntry(parentNodeId){
+            parentNode = document.getElementById(parentNodeId);
+            if (parentNode.children.length <= 4){
+                return;               
+            }
+            else {
+                parentNode.children[parentNode.children.length-3].remove();
+            }
+            
+        }
+
+        function form2nestedObjectOld(form) {
+
+            let object = {};
+            let ingredients = {};
+            let preparation = {};
+
+            for (let i = 0; i < form.length; i++) {
+
+                // Handle ingredients
+
+                if (form[i].id.indexOf('ingredient') > -1) {
+                    ingredients[form[i].id] = form[i].value;
+                }
+
+                // Handle preparation
+
+                else if (form[i].id.indexOf('preparation') > -1 && form[i].id !== 'preparation_time') {
+                    preparation[form[i].id] = form[i].value;
+                }
+
+                // Handle the rest
+
+                else {
+                    object[form[i].id] = form[i].value;
+                }
+
+            }
+
+            object.ingredients = ingredients;
+            object.preparation = preparation;
+
+            return object;
 
         }
 
@@ -127,10 +173,8 @@
                     </select>
                 </fieldset>
                 <input type="button" value="Zutat hinzufügen" onclick="createEntry('ingredients','ingredientsPrototype')">
+                <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
             </fieldset>
-
-
-
 
             <label for="difficulty">Schwierigkeit</label>
             <select name="difficulty">
@@ -150,7 +194,8 @@
             <fieldset id="preparations">
                 <label for="preparation">Zubereitung</label>
                 <input type="text" name="preparation" placeholder="Zubereitungsschritt" id="preparationPrototype">
-                <input type="button" value="Schritt hinzufügen" onclick="createEntry('preparation','preparationPrototype')">
+                <input type="button" value="Schritt hinzufügen" onclick="createEntry('preparations','preparationPrototype')">
+                <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
             </fieldset>
 
 
