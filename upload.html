@@ -215,17 +215,19 @@
     <div class="uploaddiv">
         <h1>Rezept einreichen</h1>
         <form id="recepyform" onsubmit="return saveRecipe();">
-            <input type="text" id="recepy" placeholder="Rezeptname">
+            <input type="text" id="recepy" placeholder="Rezeptname" required>
             <span>Füge ein Bild hinzu</span>
             <input type="file" id="image">
             <fieldset id="ingredients">
                 <label for="ingredients">Zutaten</label>
                 <fieldset id="ingredientsPrototype" name="ingredient">
-                    <input type="text" name="ingredientName" placeholder="Zutat">
-                    <input type="text" name="ingredientPortion" placeholder="Menge">
+                    <input type="text" name="ingredientName" placeholder="Zutat" required>
+                    <input type="number" name="ingredientPortion" placeholder="Menge" required max="9999">
                     <select name="ingredientUnit">
+                        <option value="">Maßeinheit</option>
                         <option></option>
                         <option>g</option>
+                        <option>kg</option>
                         <option>l</option>
                         <option>ml</option>
                         <option>TL</option>
@@ -239,30 +241,30 @@
                 <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
             </fieldset>
 
-            <span>Schwierigkeit</span>
             <select id="difficulty">
+                <option value="">Schwierigkeit</option>
                 <option>Leicht</option>
                 <option>Mittel</option>
                 <option>Schwer</option>
             </select>
 
-            <input type="text" id="preparation_time" placeholder="Zubereitungszeit in Minuten">
+            <input type="number" id="preparation_time" placeholder="Zubereitungszeit in Minuten" max="999">
 
-            <input type="text" id="calories" placeholder="Kalorien">
+            <input type="number" id="calories" placeholder="Kalorien" maxlength="4">
 
             <input type="text" id="category" placeholder="Kategorie">
 
-            <input type="text" id="price" placeholder="Preis">
+            <input type="number" id="price" placeholder="Preis" max="999">
 
             <fieldset id="preparations">
                 <span>Zubereitung</span>
-                <input type="text" name="preparation" placeholder="Zubereitungsschritt" id="preparationPrototype">
+                <textarea name="preparation" rows="5" placeholder="Zubereitungsschritt" id="preparationPrototype" required></textarea>
                 <input type="button" value="Schritt hinzufügen"
                     onclick="createEntry('preparations','preparationPrototype')">
                 <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
             </fieldset>
 
-            <input type="text" id="creator" placeholder="Ersteller*in">
+            <input type="text" id="creator" placeholder="Ersteller*in" required>
 
             <input type="submit">
             <label id="status"></label>
