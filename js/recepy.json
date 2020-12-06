@@ -2,19 +2,24 @@
   {
     "recepy": "Pfannkuchen mit Himbeeren",
     "image": "img/pancake.jpg",
-    "ingredients": {
-      "ingridient1": "Ei",
-      "ingridient2": "Mehl",
-      "ingrideient3": "Milch",
-      "ingridient4": "Zucker",
-      "ingridient5": "Fett zum Ausbacken",
-      "ingridient6": "Himbeeren",
-      "ingridient7": "Johannisbeersaft",
-      "ingridient8": "Zucker nach Geschmack",
-      "ingridient9": "Schlagsahne geschlagen",
-      "ingridient10": "Puderzucker",
-      "ingridient11": "Minze"
-    },
+    "ingredients": [
+      {
+        "unit": "",
+        "name": "Ei",
+        "portion": 4
+      },
+      { "unit": "EL", "name": "Mehl", "portion": 7 },
+      { "unit": "ml", "name": "Milch", "portion": 75 },
+      { "unit": "EL", "name": "Zucker", "portion": 2 },
+      { "unit": "", "name": "Fett zum Ausbraten", "portion": "" },
+      { "unit": "g", "name": "Himbeeren", "portion": 250 },
+      { "unit": "ml", "name": "Johannisbeersaft", "portion": 50 },
+      { "unit": "", "name": "Zucker nach Geschmack", "portion": "" },
+      { "unit": "", "name": "Schlagsahne geschlagen", "portion": "" },
+      { "unit": "", "name": "Puderzucker", "portion": "" },
+      { "unit": "", "name": "Minze", "portion": "" }
+    ],
+
     "difficulty": "mittel",
     "preperation_time": "30",
     "calories": "412",
@@ -25,20 +30,24 @@
       "preperation2": "2.Die Himbeeren waschen, abtropfen und zusammen mit dem Saft in einem kleinen Topf erhitzen, mit Zucker abschmecken.",
       "preperation3": "3.Die Pfannkuchen auf vorgewärmte Teller geben, mit der Soße begießen und zusammenklappen. Mit Puderzucker bestaubt,einem Klecks Sahne und Minze garniert servieren."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Spinat-Kiwi-Smoothie-Bowl",
     "image": "img/smoothie_bowl.jpg",
-    "ingredients": {
-      "ingridient1": "grüner Apfel",
-      "ingridient2": " Kiwi",
-      "ingrideient3": "Banane",
-      "ingridient4": "Baby - Spinat",
-      "ingridient5": "Zitrone",
-      "ingridient6": "Chiasamen",
-      "ingridient7": "Kokosraspeln"
-    },
+    "ingredients": [
+      {
+        "unit": "",
+        "name": "grüner Apfel",
+        "portion": 1
+      },
+      { "unit": "", "name": "Kiwi", "portion": 2 },
+      { "unit": "", "name": "Bananen", "portion": 2 },
+      { "unit": "g", "name": "Baby - Spinat", "portion": 100 },
+      { "unit": "", "name": "Zitrone", "portion": 1 },
+      { "unit": "TL", "name": "Chiasamen", "portion": 2 },
+      { "unit": "EL", "name": "Kokosraspeln", "portion": 20 }
+    ],
     "difficulty": "leicht",
     "preperation_time": "20",
     "calories": "130",
@@ -49,23 +58,27 @@
       "preperation2": "2.Die Hälfte des Obsts, Spinat und Zitronensaft in einen Standmixer geben und fein pürieren. Smoothie in 4 Bowls verteilen.",
       "preperation3": "3.Die restlichen Obststücke als Topping auf die Smoothie-Bowls geben. Mit Chiasamen und Kokosraspeln bestreuen und mit restlichen Spinatblättern servieren."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Omelett mit Pilzen und Cheddar",
     "image": "img/omelette.jpg",
-    "ingredients": {
-      "ingridient1": "braune Champignons",
-      "ingridient2": "Schalotte",
-      "ingrideient3": "Olivenöl",
-      "ingridient4": "Salz",
-      "ingridient5": "Pfeffer",
-      "ingridient6": "Eier",
-      "ingridient7": "Milch",
-      "ingridient8": "Kurkuma",
-      "ingridient9": "Cheddar - Käse",
-      "ingridient10": "Kerbel"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "braune Champignons",
+        "portion": 300
+      },
+      { "unit": "", "name": "Schalotte", "portion": 1 },
+      { "unit": "EL", "name": "Olivenöl", "portion": 2 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "Pfeffer", "portion": "" },
+      { "unit": "", "name": "Eier", "portion": 8 },
+      { "unit": "ml", "name": "Milch", "portion": 100 },
+      { "unit": "Msp.", "name": "Kurkuma", "portion": 1 },
+      { "unit": "g", "name": "Cheddar - Käse", "portion": 90 },
+      { "unit": "g", "name": "Kerbel", "portion": 10 }
+    ],
     "difficulty": "leicht",
     "preperation_time": "25",
     "calories": "304",
@@ -77,25 +90,29 @@
       "preperation3": "3.1⁄4 des Cheddars in Stücke zupfen, das Omelett damit belegen, aus der Pfanne gleiten lassen und im vorgeheizten Ofen bei 80 °C (60 °C Umluft; Gas: Stufe 1) warm halten. Aus der übrigen Eiermasse sowie den übrigen Pilzen und dem Cheddar auf die gleiche Weise 3 weitere Omeletts backen und warm halten.",
       "preperation4": "4.Kerbel waschen, trocken schütteln und Blätter abzupfen. Die Omelettes jeweils mit Pfeffer und Kerbelspitzen garnieren und servieren."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "American Pizza",
     "image": "img/pizza.jpg",
-    "ingredients": {
-      "ingridient1": "Mehl",
-      "ingridient2": "Hefe",
-      "ingrideient3": "Salz",
-      "ingridient4": "Olivenöl",
-      "ingridient5": "Milch",
-      "ingridient6": "Dose stückige Tomaten",
-      "ingridient7": "große Zwiebel",
-      "ingridient8": "Knoblauchzehe",
-      "ingridient9": "Olivenöl",
-      "ingridient10": "Zucker",
-      "ingridient11": "Salz",
-      "ingridient12": "Pfeffer"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "Mehl",
+        "portion": 750
+      },
+      { "unit": "g", "name": "Hefe", "portion": 13 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "EL", "name": "Olivenöl", "portion": 1 },
+      { "unit": "ml", "name": "Milch", "portion": 600 },
+      { "unit": "", "name": "kleine Dosen Tomaten, stückig", "portion": 2 },
+      { "unit": "", "name": "große Zwiebeln", "portion": 2 },
+      { "unit": "", "name": "Knoblauchzehen", "portion": 3 },
+      { "unit": "", "name": "etwas Olivenöl", "portion": "" },
+      { "unit": "", "name": "Zucker", "portion": "" },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "Pfeffer", "portion": "" }
+    ],
     "difficulty": "leicht",
     "preperation_time": "110",
     "calories": "787",
@@ -108,23 +125,28 @@
       "preperation4": "Nun ein Backblech (oder, sofern vorhanden, runde Pizzableche) ordentlich mit Olivenöl (am besten mit den Fingern) einölen und den Teig darauf in Form ziehen. Nicht ausrollen, sondern einfach ziehen und etwa so dick wie der kleine Finger ist belassen.Einige Minuten auf dem Blech gehen lassen und dann die Pizzasauce auf den Teig geben.Noch keinen(!) Käse oder Belag auf die Pizza geben! Nur mit der Sauce bestrichen in den Backofen geben.",
       "preperation5": "Bei 250 Grad für 10 Minuten backen. Nach den 10 Minuten die Pizza nach Belieben belegen und mit Käse bestreuen (ich nehme bei dieser Teigmenge 400 g Käse - Gouda, Emmentaler oder Mozzarella, ganz nach Gusto).Weitere 10 Minuten backen und genießen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Gebackene Süßkartoffeln und Rote Beete",
     "image": "img/beetroot_sweetpotato.jpg",
-    "ingredients": {
-      "ingridient1": " Rote Beete",
-      "ingridient2": "Süßkartoffeln",
-      "ingrideient3": "Olivenöl",
-      "ingridient4": "Pinienkerne",
-      "ingridient5": "Sesam",
-      "ingridient6": "schwarzer Sesam",
-      "ingridient7": "Minze",
-      "ingridient8": "körniger Frischkäse",
-      "ingridient9": "Salz",
-      "ingridient10": "Pfeffer"
-    },
+    "ingredients": [
+      {
+        "unit": "",
+        "name": "Knollen Rote Beete",
+        "portion": 8
+      },
+      { "unit": "", "name": "Süßkartoffeln", "portion": 4 },
+      { "unit": "EL", "name": "Olivenöl", "portion": 5 },
+      { "unit": "g", "name": "Pinienkerne", "portion": 30 },
+      { "unit": "g", "name": "Sesam", "portion": 25 },
+      { "unit": "g", "name": "schwarzer Sesam", "portion": 25 },
+      { "unit": "g", "name": "Minze", "portion": 10 },
+      { "unit": "g", "name": "körniger Frischkäse", "portion": 400 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "Pfeffer", "portion": "" }
+    ],
+
     "difficulty": "leicht",
     "preperation_time": "65",
     "calories": "690",
@@ -137,25 +159,30 @@
       "preperation4": "4.Minze waschen, trocken schütteln und Blätter klein schneiden. Minze mitFrischkäse und restlichem Olivenöl vermengen und mit Salz und Pfeffer würzen.",
       "preperation5": "5.Die Roten Beten und Süßkartoffeln aus dem Ofen nehmen und auf Tellern anrichten.Knollen längs einschneiden, etwas auseinanderdrücken, mit Frischkäse füllen und mit der Pinienkern-Sesam-Mischung bestreuen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Kartoffelsuppe",
     "image": "img/potato_soup.jpg",
-    "ingredients": {
-      "ingridient1": "Suppengrün",
-      "ingridient2": "Kartoffeln",
-      "ingrideient3": "Zwiebel",
-      "ingridient4": "Rapsöl",
-      "ingridient5": "frische Lorbeerblätter",
-      "ingridient6": "getrockneter Majoran",
-      "ingridient7": "Gemüsebrühe",
-      "ingridient8": "Geflügelwürstchen",
-      "ingridient9": "Muskatnuss",
-      "ingridient10": "Salz",
-      "ingridient11": "Pfeffer",
-      "ingridient12": "Piment"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "Suppengrün",
+        "portion": 600
+      },
+      { "unit": "g", "name": "Kartoffeln", "portion": 800 },
+      { "unit": "g", "name": "Zwiebeln", "portion": 50 },
+      { "unit": "EL", "name": "Rapsöl", "portion": 1 },
+      { "unit": "", "name": "frische Lorbeerblätter", "portion": 2 },
+      { "unit": "TL", "name": "getrockneter Majoran", "portion": 1 },
+      { "unit": "ml", "name": "Gemüsebrühe", "portion": 700 },
+      { "unit": "g", "name": "Geflügelwürstchen", "portion": 360 },
+      { "unit": "", "name": "Muskatnuss", "portion": "" },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "Pfeffer", "portion": "" },
+      { "unit": "Msp.", "name": "Piment", "portion": 1 }
+    ],
+
     "difficulty": "leicht",
     "preperation_time": "80",
     "calories": "444",
@@ -171,25 +198,30 @@
       "preperation7": "7.Petersilienblätter abzupfen, hacken und in die Kartoffelsuppe geben.",
       "preperation8": "8.Kartoffelsuppe mit Salz, Pfeffer, Piment und etwas frisch abgeriebenem Muskat abschmecken."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Pikantes Hähnchen Curry",
     "image": "img/chicken_curry.jpg",
-    "ingredients": {
-      "ingridient1": "Hähnchenbrustfilet",
-      "ingridient2": "Tikka-Masala-Paste",
-      "ingrideient3": "Sahnejoghurt",
-      "ingridient4": "rote Zwiebel",
-      "ingridient5": "Ingwer",
-      "ingridient6": "Rapsöl",
-      "ingridient7": "Dosentomaten",
-      "ingridient8": "Tomatenmark",
-      "ingridient9": "Sojacreme",
-      "ingridient10": "Salz",
-      "ingridient11": "schwarzer Pfeffer",
-      "ingridient12": "Schwarzkümmel"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "Hähnchenbrustfilet",
+        "portion": 350
+      },
+      { "unit": "g", "name": "Tikka - Masala - Paste", "portion": 50 },
+      { "unit": "EL", "name": "Sahnejoghurt", "portion": 3 },
+      { "unit": "", "name": "kleine rote Zwiebeln", "portion": 3 },
+      { "unit": "g", "name": "Ingwer", "portion": 30 },
+      { "unit": "EL", "name": "Rapsöl", "portion": 1 },
+      { "unit": "g", "name": "Dosentomaten", "portion": 425 },
+      { "unit": "EL", "name": "Tomatenmark", "portion": 1 },
+      { "unit": "g", "name": "Sojacreme", "portion": 75 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "schwarzer Pfeffer", "portion": "" },
+      { "unit": "", "name": "Schwarzkümmel", "portion": "" }
+    ],
+
     "difficulty": "leicht",
     "preperation_time": "60",
     "calories": "385",
@@ -202,22 +234,27 @@
       "preperation4": "4.Dosentomaten etwas zerkleinern, mit Tomatenmark und 125 ml Wasser in die Pfanne geben, einmal aufkochen. Zugedeckt 10 Minuten bei mittlerer Hitze kochen lassen.",
       "preperation5": "5.Am Ende der Garzeit etwas Sojacreme dazugießen, nochmals kurz aufkochen. Mit Salz und Pfeffer würzen. Mit restlicher Sojacreme anrichten. Nach Belieben Schwarzkümmel darüberstreuen. Dazu passt Naturreis."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Kartoffelgratin",
     "image": "img/potato_gratin.jpg",
-    "ingredients": {
-      "ingridient1": "Kartoffeln",
-      "ingridient2": "Pastinake",
-      "ingridient3": "Knoblauchzehe",
-      "ingridient4": "Schlagsahne",
-      "ingridient5": "Salz",
-      "ingridient6": "Pfeffer",
-      "ingridient7": "Muskatnuss",
-      "ingridient8": "Parmesam",
-      "ingridient9": "Dill"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "Kartoffeln",
+        "portion": 600
+      },
+      { "unit": "", "name": "Pastinake", "portion": 1 },
+      { "unit": "", "name": "Knoblauchzehe", "portion": 1 },
+      { "unit": "ml", "name": "Schlagsahne", "portion": 350 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "", "name": "Pfeffer", "portion": "" },
+      { "unit": "", "name": "Muskatnuss", "portion": "" },
+      { "unit": "g", "name": "Parmesam", "portion": 30 },
+      { "unit": "", "name": "Stiele Dill", "portion": 2 }
+    ],
+
     "difficulty": "leicht",
     "preperation_time": "80",
     "calories": "433",
@@ -229,23 +266,28 @@
       "preperation3": "3.Sahnemischung über die Kartoffeln gießen. Gratin im vorgeheizten Backofen bei 225 °C (Umluft 200 °C, Gas: Stufe 3-4) etwa 35 Minuten backen.",
       "preperation4": "4.Inzwischen Parmesan fein reiben. Über die Kartoffeln streuen und 10 Minuten weiterbacken. Dill waschen, trocken schütteln und auf dem Kartoffelgratin verteilen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Gebackene Süßkartoffeln mit Schafskäse",
     "image": "img/scheepcheese_sweetpotato.jpg",
-    "ingredients": {
-      "ingridient1": "Süßkartoffeln",
-      "ingridient2": "Knoblauchhzehe",
-      "ingrideient3": "Chilishote",
-      "ingridient4": "Schafskäse",
-      "ingridient5": "Olivenöl",
-      "ingridient6": "Honig",
-      "ingridient7": "Kürbiskerne",
-      "ingridient8": "Sonnenblumenkerne",
-      "ingridient9": "Sesam",
-      "ingridient10": "Meersalz"
-    },
+    "ingredients": [
+      {
+        "unit": "kg",
+        "name": "Süßkartoffeln",
+        "portion": 1
+      },
+      { "unit": "", "name": "Knoblauchzehen", "portion": 4 },
+      { "unit": "", "name": "Chilishoten", "portion": 3 },
+      { "unit": "g", "name": "Schafskäse", "portion": 200 },
+      { "unit": "EL", "name": "Olivenöl", "portion": 2 },
+      { "unit": "EL", "name": "Honig", "portion": 1 },
+      { "unit": "g", "name": "Kürbiskerne", "portion": 30 },
+      { "unit": "g", "name": "Sonnenblumenkerne", "portion": 30 },
+      { "unit": "g", "name": "Sesam", "portion": 15 },
+      { "unit": "", "name": "Meersalz", "portion": "" }
+    ],
+
     "difficulty": "leicht",
     "preperation_time": "35",
     "calories": "519",
@@ -256,28 +298,37 @@
       "preperation2": "2.Chilischoten längs halbieren, entkernen, waschen und hacken oder in Ringe schneiden. Schafskäse in Würfel schneiden und mit den Süßkartoffeln, Knoblauch, Chili, Olivenöl und Honig mischen. Auf einem mit Backpapier ausgelegten Backblech verteilen und im vorgeheizten Backofen bei 180 °C (160 °C Umluft; Gas: Stufe 2–3) etwa 20–25 Minuten garen.",
       "preperation3": "3.Inzwischen Kürbis- und Sonnenblumenkerne und Sesam in einer Pfanne ohne Fett bei mittlerer Hitze anrösten. Süßkartoffeln aus dem Ofen nehmen, auf Tellern anrichten und mit Meersalz, Kernen und Sesam bestreuen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Schokonusstorte mit Käsecreme",
     "image": "img/cream_cake.jpg",
-    "ingredients": {
-      "ingridient1": "Dinkelmehl Type 1050",
-      "ingridient2": "Backpulver",
-      "ingrideient3": "gemahlene Mandel",
-      "ingridient4": "gemahlene Haselnüsse",
-      "ingridient5": "Kakaopulver",
-      "ingridient6": "Bio-Orangenschale",
-      "ingridient7": "Ei",
-      "ingridient8": "Rohrzucker",
-      "ingridient9": "Salz",
-      "ingridient10": "Frischkäse",
-      "ingridient11": "Puderzucker",
-      "ingridient12": "Schlagsahne",
-      "ingridient13": "gehackte, geröstete Haselnusskerne",
-      "ingridient14": "Zartbitterkuvertüre",
-      "ingridient15": "Vollmilchkuvertüre"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "Dinkelmehl Type 1050",
+        "portion": 50
+      },
+      { "unit": "TL", "name": "Backpulver", "portion": 1 },
+      { "unit": "g", "name": "gemahlene Mandel", "portion": 30 },
+      { "unit": "g", "name": "gemahlene Haselnüsse", "portion": 50 },
+      { "unit": "EL", "name": "Kakaopulver", "portion": 2 },
+      { "unit": "", "name": "Bio Orangenschale", "portion": 1 },
+      { "unit": "", "name": "Eier", "portion": 5 },
+      { "unit": "g", "name": "Rohrzucker", "portion": 80 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "g", "name": "Frischkäse", "portion": 200 },
+      { "unit": "g", "name": "Puderzucker", "portion": 40 },
+      { "unit": "ml", "name": "Schlagsahne", "portion": 300 },
+      {
+        "unit": "g",
+        "name": "gehackte geröstete Haselnusskerne",
+        "portion": 50
+      },
+      { "unit": "g", "name": "Zartbitterkuvertüre", "portion": 100 },
+      { "unit": "g", "name": "Vollmilchkuvertüre", "portion": 100 }
+    ],
+
     "difficulty": "mittel",
     "preperation_time": "70",
     "calories": "288",
@@ -291,25 +342,29 @@
       "preperation5": "5.Biskuit waagerecht 4 mal in 5 Böden teilen. Die unteren 4 Böden jeweils mit 1/4 der Creme bestreichen und wieder aufeinander legen, mit dem Deckel abschließen. Die Torte auf einen Kuchenplatte setzen.",
       "preperation6": "6.Kuvertüre hacken und über einem heißen Wasserbad schmelzen lassen. Leicht abkühlen lassen, auf die Torte gießen und glatt streichen, nach Belieben mit Schoko-Nusspralinen garnieren und fest werden lassen. Torte bis zum servieren kalt stellen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Spekulatiuskekse mit Mandeln",
     "image": "img/almond_cookie.jpg",
-    "ingredients": {
-      "ingridient1": "weiche Butter",
-      "ingridient2": "Vollrohrzucker",
-      "ingrideient3": "Ei",
-      "ingridient4": "gemahlenes Spekulatiusgewürz",
-      "ingridient5": "Bio-Zitrone",
-      "ingridient6": "Hirschhornsalz",
-      "ingridient7": "Milch",
-      "ingridient8": "Salz",
-      "ingridient9": "Weizen-Vollkornmehl",
-      "ingridient10": "Weizenmehl Type 405",
-      "ingridient11": "gemahlene Mandel",
-      "ingridient12": "gehobelte Mandel"
-    },
+    "ingredients": [
+      {
+        "unit": "g",
+        "name": "weiche Butter",
+        "portion": 125
+      },
+      { "unit": "g", "name": "Vollrohrzucker", "portion": 140 },
+      { "unit": "", "name": "Ei", "portion": 1 },
+      { "unit": "TL", "name": "gemahlenes Spekulatiusgewürz", "portion": 2 },
+      { "unit": "", "name": "Bio - Zitrone", "portion": 1 },
+      { "unit": "", "name": "Hirschhornsalz", "portion": "" },
+      { "unit": "EL", "name": "Milch", "portion": 3 },
+      { "unit": "", "name": "Salz", "portion": "" },
+      { "unit": "g", "name": "Weizen - Vollkornmehl", "portion": 130 },
+      { "unit": "g", "name": "Weizenmehl Type 405", "portion": 120 },
+      { "unit": "g", "name": "gehmalene Mandel", "portion": 30 },
+      { "unit": "g", "name": "gehobelte Mandeln", "portion": 80 }
+    ],
 
     "difficulty": "leicht",
     "preperation_time": "50",
@@ -322,18 +377,23 @@
       "preperation3": "3.Dann Teig noch einmal durchkneten, auf einer bemehlten Arbeitsfläche 3 mm dünn ausrollen und mit einem scharfen Messer Rechtecke (ca. 4 x 5 cm) ausschneiden.",
       "preperation4": "4.Spekulatius auf mit Backpapier ausgelegte Backbleche legen, mit etwas Milch bestreichen und mit gehobelten Mandeln bestreuen. Im vorgeheizten Backofen bei 180 °C (Umluft 160 °C, Gas: Stufe 2–3) in 8–10 Minuten knusprig backen. Vollständig auskühlen lassen."
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   },
   {
     "recepy": "Zimtkekse",
     "image": "img/cinnamon_cookie.jpg",
-    "ingredients": {
-      "ingridient1": "Mürbeteig",
-      "ingridient2": "flüssige Butter",
-      "ingrideient3": "Zimtpulver",
-      "ingridient4": "Rohrzucker",
-      "ingridient5": "Eigelb"
-    },
+    "ingredients": [
+      {
+        "unit": "",
+        "name": "Mürbeteig",
+        "portion": 1
+      },
+      { "unit": "g", "name": "flüssige Butter", "portion": 20 },
+      { "unit": "TL", "name": "Zimtpulver", "portion": 2 },
+      { "unit": "g", "name": "Rohrzucker", "portion": 15 },
+      { "unit": "", "name": "Eigelb", "portion": 1 }
+    ],
+
     "difficulty": "mittel",
     "preperation_time": "20",
     "calories": "91",
@@ -346,6 +406,6 @@
       "preperation4": "4.Mürbeteigrolle in 0,5–1 cm dicke Scheiben schneiden und auf ein mit Backpapier belegtes Backblech setzen. Eigelb mit 1 EL Wasser verquirlen und die Zimtplätzchen damit bepinseln.",
       "preperation5": "5.Im vorgeheizten Backofen bei 180 °C (Umluft 160 °C; Gas: Stufe 2–3) 10–12 Minuten goldbraun backen. Zimtplätzchen herausnehmen und abkühlen lassen"
     },
-    "creator":"Unbekannt"
+    "creator": "Unbekannt"
   }
 ]
