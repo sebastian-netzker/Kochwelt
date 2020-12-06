@@ -1,7 +1,3 @@
-
-
-
-
 function loadRecepyList() {
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -11,8 +7,10 @@ function loadRecepyList() {
     .then(function (result) {
       //then(function (variable vom server))
       console.log("Laden erfolgreich!", result);
-      infoRecepy = JSON.parse(result); 
+      infoRecepy = JSON.parse(result);
       showRecepyListInfo(id);
+      showIngridientsList(id);
+      showPreparation(id);
     })
     .catch(function (error) {
       // Fehler
@@ -20,60 +18,95 @@ function loadRecepyList() {
     });
 }
 
-
-
 function openRecepy(id) {
   window.location.href = "./recepy-list.html?recepy=" + id;
 }
 
-
-
-
-
-function showRecepyListInfo(id){
-
-    let RecepyListInfo = createRecepyListInfo( infoRecepy[id].recepy,
+function showRecepyListInfo(id) {
+  let RecepyListInfo = createRecepyListInfo(
+    infoRecepy[id].recepy,
     infoRecepy[id].image,
     infoRecepy[id].preperation_time,
     infoRecepy[id].difficulty,
     infoRecepy[id].calories,
     infoRecepy[id].price,
-    infoRecepy[id].creator,
+    infoRecepy[id].creator
+  );
 
-
-    );
-
-
-    document
-      .getElementById("addRecepy-List")
-      .insertAdjacentHTML("beforeend", RecepyListInfo);
-
-
-
-
-
+  document
+    .getElementById("addRecepy-List")
+    .insertAdjacentHTML("beforeend", RecepyListInfo);
 }
 
+function showIngridientsList(id) {
+  for (let i = 0; i < infoRecepy[id].ingredients.length; i++) {
+    if (i % 2 == 0) {
+      IngridientsInfo = createIngridientsList1(
+        infoRecepy[id].ingredients[i].name,
+        infoRecepy[id].ingredients[i].portion,
+        infoRecepy[id].ingredients[i].unit
+      );
+    } else if (i % 2 != 0) {
+      IngridientsInfo = createIngridientsList2(
+        infoRecepy[id].ingredients[i].name,
+        infoRecepy[id].ingredients[i].portion,
+        infoRecepy[id].ingredients[i].unit
+      );
+    }
 
+    document
+      .getElementById("div-ingridient")
+      .insertAdjacentHTML("beforeend", IngridientsInfo);
+  }
+}
 
+function showPreparation(id) {
+  for (let i = 0; i < infoRecepy[id].preperation.length; i++) {
+    Preparation = createPreparation(infoRecepy[id].preperation[i]);
 
+    document
+      .getElementById("div-preparation")
+      .insertAdjacentHTML("beforeend", Preparation);
+  }
+}
 
+function createPreparation(preperation_step) {
+  let Preparation = `<p class="p-preperation"> ${preperation_step} </p>`;
 
+  return Preparation;
+}
 
+function createIngridientsList1(
+  ingridient_even,
+  ingridient_portion,
+  ingridient_unit
+) {
+  let IngridientsInfo = `
+                        <span class="span-white">${ingridient_portion} ${ingridient_unit}  ${ingridient_even}</span>`;
+
+  return IngridientsInfo;
+}
+
+function createIngridientsList2(
+  ingridient_odd,
+  ingridient_portion,
+  ingridient_unit
+) {
+  let IngridientsInfo = `<span class="span-grey"> ${ingridient_portion} ${ingridient_unit}   ${ingridient_odd}</span>`;
+
+  return IngridientsInfo;
+}
 
 function createRecepyListInfo(
-    recepy_name,
-    picture_url,
-    preperation_time,
-    difficulty,
-    calories,
-    price,
-    creator
-
-){
-
-
-    let RecepyListInfo = `<h1 class="h1-recepylist">${recepy_name}</h1>
+  recepy_name,
+  picture_url,
+  preperation_time,
+  difficulty,
+  calories,
+  price
+  // creator
+) {
+  let RecepyListInfo = `<h1 class="h1-recepylist">${recepy_name}</h1>
     
     <div> 
 
@@ -98,46 +131,38 @@ function createRecepyListInfo(
 
         </div> 
 
-        <div id="div-ingridient" class="div-ingridient">
-           
-        </div>
+       
 
+        </div>`;
 
-        <hr class="hr-recepy">
+  // <hr class="hr-recepy">
 
-        <div>
+  //  <div>
 
-        <h3 class="h3-recepylist">Zubereitung</h3>
+  // <h3 class="h3-recepylist">Zubereitung</h3>
 
+  //  <div class="div-preperation">
 
-        <div class="div-preperation">
+  // </div>
 
-        </div>
+  // <hr class="hr-recepy">
 
-        <hr class="hr-recepy">
+  // <div class="div-createrecepy">
 
+  //     <h3 class="h3-recepylist">Rezept erstellt von </h3>
 
-         <div class="div-createrecepy">
+  //     <div class="div-flexbox">
+  //      <img class="img-profile" src="img/profile.png" alt="">
 
+  //     <h3 class="h3-creatorrecepy">${creator}</h3>
+  //   </div>
 
-             <h3 class="h3-recepylist">Rezept erstellt von </h3>
+  // </div>
 
-             <div class="div-flexbox">
-             <img class="img-profile" src="img/profile.png" alt="">
+  // </div>`;
 
-             <h3 class="h3-creatorrecepy">${creator}</h3>
-          </div>
-
-
-
-
-
-        </div>
-                          
-    
-    </div>`;
-
-    return RecepyListInfo;
+  return RecepyListInfo;
 }
+
 
 
