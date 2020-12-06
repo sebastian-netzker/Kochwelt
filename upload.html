@@ -12,11 +12,17 @@
             display: flex;
             flex-direction: column;
         }
-        .uploaddiv{
+
+        .uploaddiv {
             margin-top: 130px;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .addlist{
+            display: flex;
+            flex-direction: column;
         }
 
     </style>
@@ -47,28 +53,50 @@
 
         }
 
-        /**
-        * Retrieves input data from a form and returns it as a JSON object.
-        * @param  {HTMLFormControlsCollection} elements  the form elements
-        * @return {Object}                               form data as an object literal
-        */
-        const formToJSON = elements => [].reduce.call(elements, (data, element) => {
-            data[element.name] = element.value;
-            return data;
-        }, {});
-        const handleFormSubmit = event => {
-            // Stop the form from submitting since we’re handling that with AJAX.
-            event.preventDefault();
-            // Call our function to get the form data.
-            const data = formToJSON(form.elements);
-            // Demo only: print the form data onscreen as a formatted JSON object.
-            // const dataContainer = document.getElementsByClassName('results__display')[0];
-            // Use `JSON.stringify()` to make the output valid, human-readable JSON.
-            dataContainer.textContent = JSON.stringify(data, null, "  ");
-            // ...this is where we’d actually do something with the form data...
-        };
-        const form = document.getElementsByClassName('recepyform')[0];
-        form.addEventListener('submit', handleFormSubmit);
+        function form2object(form) {
+
+            let object = {};
+            for (let i = 0; i < form.length; i++) {
+                object[form[i].id] = form[i].value
+            }
+            return object;
+
+        }
+
+        function form2nestedObject(form) {
+
+            let object = {};
+            let ingredients = {};
+            let preparation = {};
+
+            for (let i = 0; i < form.length; i++) {
+
+                // Handle ingredients
+
+                if (form[i].id.indexOf('ingredient') > -1) {
+                    ingredients[form[i].id] = form[i].value;
+                }
+
+                // Handle preparation
+
+                else if (form[i].id.indexOf('preparation') > -1 && form[i].id !== 'preparation_time') {
+                    preparation[form[i].id] = form[i].value;
+                }
+
+                // Handle the rest
+
+                else {
+                    object[form[i].id] = form[i].value;
+                }
+
+            }
+
+            object.ingredients = ingredients;
+            object.preparation = preparation;
+
+            return object;
+
+        }
 
     </script>
 </head>
@@ -88,50 +116,50 @@
         </nav>
     </div>
     <div class="uploaddiv">
-    <h1>Rezept abschicken</h1>
-    <form action="" id="recepyform" class="recepyform">
-        <label for="recepy">Gib deinem Rezept einen Namen:</label>
-        <input type="text" name="recepy" id="recepy">
+        <h1>Rezept abschicken</h1>
+        <form action="" id="recepyform" class="recepyform">
+            <label for="recepy">Gib deinem Rezept einen Namen:</label>
+            <input type="text" name="recepy" id="recepy">
 
-        <label for="image">Füge ein Bild hinzu</label>
-        <input type="file" name="image" id="image">
-        <div id="ingredientlist">
-            <label for="ingredient1">Zutat 1</label>
-            <input type="text" name="ingredient1" id="ingredient1">
-        </div>
-        <input type="button" value="Zutat hinzufügen" onclick="createEntry('ingredientlist','ingredient','Zutat')">
+            <label for="image">Füge ein Bild hinzu</label>
+            <input type="file" name="image" id="image">
+            <div id="ingredientlist" class="addlist">
+                <label for="ingredient1">Zutat 1</label>
+                <input type="text" name="ingredient1" id="ingredient1">
+            </div>
+            <input type="button" value="Zutat hinzufügen" onclick="createEntry('ingredientlist','ingredient','Zutat')">
 
-        <span>Schwierigkeit:</span>
-        <input type="radio" name="difficulty" id="difficulty_easy">
-        <label for="difficulty_easy">Einfach</label>
-        <input type="radio" name="difficulty" id="difficulty_intermediate">
-        <label for="difficulty_intermediate">Mittel</label>
-        <input type="radio" name="difficulty" id="difficulty_difficult">
-        <label for="difficulty_difficult">Schwer</label>
+            <span>Schwierigkeit:</span>
+            <input type="radio" name="difficulty" id="difficulty_easy">
+            <label for="difficulty_easy">Einfach</label>
+            <input type="radio" name="difficulty" id="difficulty_intermediate">
+            <label for="difficulty_intermediate">Mittel</label>
+            <input type="radio" name="difficulty" id="difficulty_difficult">
+            <label for="difficulty_difficult">Schwer</label>
 
-        <label for="preparation_time">Zubereitungszeit in Minuten:</label>
-        <input type="text" name="preparation_time" id="preparation_time">
+            <label for="preparation_time">Zubereitungszeit in Minuten:</label>
+            <input type="text" name="preparation_time" id="preparation_time">
 
-        <label for="calories">Kalorien:</label>
-        <input type="text" name="calories" id="calories">
+            <label for="calories">Kalorien:</label>
+            <input type="text" name="calories" id="calories">
 
-        <label for="category">Kategorie</label>
-        <input type="text" name="category" id="category">
+            <label for="category">Kategorie</label>
+            <input type="text" name="category" id="category">
 
-        <label for="price">Preis</label>
-        <input type="text" name="price" id="price">
-        <div id="preparationlist">
-            <label for="preparation1">Schritt 1</label>
-            <input type="text" name="preparation1" id="ingredient1">
-        </div>
-        <input type="button" value="Schritt hinzufügen"
-            onclick="createEntry('preparationlist','preparation','Schritt')">
+            <label for="price">Preis</label>
+            <input type="text" name="price" id="price">
+            <div id="preparationlist" class="addlist">
+                <label for="preparation1">Schritt 1</label>
+                <input type="text" name="preparation1" id="ingredient1">
+            </div>
+            <input type="button" value="Schritt hinzufügen"
+                onclick="createEntry('preparationlist','preparation','Schritt')">
 
-        <label for="creator">Wie sollen wir dich nennen?</label>
-        <input type="text" name="creator" id="creator">
+            <label for="creator">Wie sollen wir dich nennen?</label>
+            <input type="text" name="creator" id="creator">
 
-        <input type="submit">
-    </form>
+            <input type="submit">
+        </form>
     </div>
 </body>
 

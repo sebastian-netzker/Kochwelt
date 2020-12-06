@@ -6,7 +6,11 @@ $myfile = fopen($file, "r") or die("Unable to open file!");
 $recepy = fread($myfile,filesize($file));
 fclose($myfile);
 $arr = json_decode($recepy, true);
-
+$allowed_files = [
+    'image/jpeg' => 'jpg',
+    'image/gif' => 'gif',
+    'image/png' => 'png'
+];
 switch ($_SERVER['REQUEST_METHOD']) {
     case ("OPTIONS"): //Allow preflighting to take place.
         header("Access-Control-Allow-Origin: *");
@@ -20,14 +24,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $newrecepy = $_POST['recepy'];
             $newfile  =  time(). $_FILES['recepy']['name']['image'];
             if (!empty($_FILES)) {
-                
-                $newrecepy['image'] ="img/".$newfile;
-                array_push($arr,$newrecepy);
-                $txt = json_encode($arr);
-                $myfile = fopen($file, "w");
-                fwrite($myfile, $txt);
-                fclose($myfile);
-                move_uploaded_file($_FILES['recepy']['tmp_name']['image'], "../img/".$newfile);
+                $type = mime_content_type($_FILES['datei']['tmp_name']);
+                if(isset($allowed_files[$type])) {
+                    $newrecepy['image'] ="img/".$newfile;
+                    array_push($arr,$newrecepy);
+                    $txt = json_encode($arr);
+                    $myfile = fopen($file, "w");
+                    fwrite($myfile, $txt);
+                    fclose($myfile);
+                    move_uploaded_file($_FILES['recepy']['tmp_name']['image'], "../img/".$newfile);
+                }
             }
         }
         header("Location: " . $redirect); 
