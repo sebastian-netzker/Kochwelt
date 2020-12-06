@@ -82,18 +82,18 @@
 
         }
 
-        function getPreparationSteps(){
+        function getPreparationSteps() {
             let array = [];
             let preparations = document.getElementsByName('preparation');
 
-            for (let i=0; i < preparations.length; i++){
+            for (let i = 0; i < preparations.length; i++) {
                 array.push(preparations[i].value);
-            }            
+            }
 
             return array;
         }
 
-        function createRecipeObject() {
+        function getRecipeObject() {
             recipe = {};
             recipe.recepy = document.getElementById('recepy').value;
             recipe.ingredients = getIngredients();
@@ -107,10 +107,92 @@
             return recipe;
         }
 
-        function saveRecipe(){
-            let recipe = createRecipeObject();
-            console.log(recipe);
-            return false
+
+        function saveRecipe() {
+            let input = getRecipeObject();
+            updateStatus('Rezept wird gespeichert');
+            loadJSONFromServer()
+                .then(function (result) {
+                    myJSON = JSON.parse(result);
+                    myJSON.push(input);
+                    console.log(myJSON);
+                    saveJSONToServer(myJSON);
+                    updateStatus('Speichern erfolgreich!');
+                })
+                .catch(function (error) {
+                    updateStatus('Fehler beim Speichern');
+                    console.error('error', error);
+                });
+            return false;
+        }
+
+        const BASE_SERVER_URL = 'http://gruppe-49.developerakademie.com/dirkv2/Kochwelt/js/'; // Place of the backend
+
+        /**
+        * Saves a JSON or JSON Array to the Server
+        * payload {JSON | Array} - The payload you want to store
+        */
+        function saveJSONToServer(payload) {
+            return new Promise(function (resolve, reject) {
+                let xhttp = new XMLHttpRequest();
+                let proxy = determineProxySettings();
+                let serverURL = proxy + BASE_SERVER_URL + 'save_json.php';
+                xhttp.open('POST', serverURL);
+
+                xhttp.onreadystatechange = function (oEvent) {
+                    if (xhttp.readyState === 4) {
+                        if (xhttp.status >= 200 && xhttp.status <= 399) {
+                            resolve(xhttp.responseText);
+                        } else {
+                            reject(xhttp.statusText);
+                        }
+                    }
+                };
+
+                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhttp.send(JSON.stringify(payload));
+
+            });
+        }
+
+        /**
+         * Loads a JSON or JSON Array to the Server
+         * payload {JSON | Array} - The payload you want to store
+         */
+        function loadJSONFromServer() {
+            return new Promise(function (resolve, reject) {
+                let xhttp = new XMLHttpRequest();
+                let proxy = determineProxySettings();
+                let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
+                xhttp.open('GET', serverURL);
+
+                xhttp.onreadystatechange = function (oEvent) {
+                    if (xhttp.readyState === 4) {
+                        if (xhttp.status >= 200 && xhttp.status <= 399) {
+                            resolve(xhttp.responseText);
+                        } else {
+                            reject(xhttp.statusText);
+                        }
+                    }
+                };
+
+                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhttp.send();
+
+            });
+        }
+
+        function updateStatus(status) {
+            let result= document.getElementById('status');
+            result.innerHTML = status;
+        }
+
+        function determineProxySettings() {
+            if (window.location.href.indexOf('.developerakademie.com') > -1) {
+                return '';
+            } else {
+                return 'https://cors-anywhere.herokuapp.com/';
+            }
         }
 
     </script>
@@ -183,6 +265,7 @@
             <input type="text" id="creator" placeholder="Ersteller*in">
 
             <input type="submit">
+            <label id="status"></label>
         </form>
     </div>
 </body>
