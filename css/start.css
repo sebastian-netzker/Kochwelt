@@ -92,7 +92,7 @@ body{
 			display: none;
 		}
 		.hauptcontainer{
-			font-size: 40px;
+			font-size: 1.7em;
 			padding: 20px 50px !important;
 		}
 		.form {
@@ -103,9 +103,10 @@ body{
 			margin: 50px;
 		}
 		.contact textarea {
-			width: 300px !important;
-			height: 150px !important;
-			font-size: 0.2em;
+			min-width: 300px !important;
+			max-width: 400px;
+			height: 250px !important;
+			font-size: 0.4em;
 			margin: 50px;
 		}
 		.button {
