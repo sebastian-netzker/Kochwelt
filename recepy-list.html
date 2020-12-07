@@ -8,28 +8,31 @@
       rel="stylesheet"
       href="bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="recepy.js"></script>
-    <script src="recepy-list.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style-recepy.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/recepy.js"></script>
+    <script src="js/recepy-list.js"></script>
 </head>
 <body onload="loadRecepyList()">
 
-    <h2 class="headline"><img class="img-logo" src="img/logo_small.png" alt="">  Kochwelt</h2>
-<div class="menu">
+      <div class="navigation-bar">
 
-    
+        <img class="logo" src="img/logo.png">
 
-      <a  href="recepy.html">Start</a>
-      <a style="font-weight: bold;" href="recepy-list.html">Rezept Allgemein</a>
-      <a href="#">Rezept Hinzufügen</a>
-      <a href="#"
-        >Kontakt</a>
+        <nav class="navigation-menu">
+
+            <a href="index.html"> Start </a>&nbsp; | &nbsp;
+            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+        </nav>
+        
+
     </div>
 
-    <hr class="line"  size="1" color="grey" top="30px" />
 
-
-    <div id="addRecepy-List">
+    <div style="margin-top: 130px;" id="addRecepy-List">
 
     </div>
 

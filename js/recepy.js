@@ -1,5 +1,5 @@
 const BASE_SERVER_URL =
-  "http://gruppe-49.developerakademie.com/js/";
+  "http://gruppe-49.developerakademie.com/dirk2/js/";
 
   let infoRecepy = [];
 
