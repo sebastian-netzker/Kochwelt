@@ -70,8 +70,22 @@ body{
 		max-height: 20px;
 		border-radius: 10px;
 	}
-
-
+	.contact h1{
+		text-align: center !important;
+	}
+	.button {
+		margin: 20px;
+		padding: 20px 40px;
+		border-radius: 10px;
+		color: rgb(57,146,43);
+		font-family: 'Raleway';
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.contact textarea {
+		width: 600px;
+		height: 300px;
+	}
 
 	@media(max-width: 1000px){
 		.navigation-menu {
@@ -83,5 +97,23 @@ body{
 		}
 		.form {
 			font-size: 4em !important;
+		}
+		.form input {
+			font-size: 0.2em;
+			margin: 50px;
+		}
+		.contact textarea {
+			width: 300px !important;
+			height: 150px !important;
+			font-size: 0.2em;
+			margin: 50px;
+		}
+		.button {
+			font-size: 0.5em !important;
+			margin: 50px;
+		}
+		.footer {
+			height: 200px;
+			font-size: 1.8em;
 		}
 	}
