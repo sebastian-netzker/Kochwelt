@@ -11,6 +11,7 @@ function loadRecepyList() {
       showRecepyListInfo(id);
       showIngridientsList(id);
       showPreparation(id);
+      showRecepy_Creator(id);
     })
     .catch(function (error) {
       // Fehler
@@ -70,6 +71,40 @@ function showPreparation(id) {
       .getElementById("div-preparation")
       .insertAdjacentHTML("beforeend", Preparation);
   }
+}
+
+function showRecepy_Creator(id) {
+  
+    Recepy_Creator = createRecepy_Creator(
+      infoRecepy[id].creator
+    );
+
+    document
+      .getElementById("div-creator")
+      .insertAdjacentHTML("beforeend",Recepy_Creator);
+  
+}
+
+
+function createRecepy_Creator(creator) {
+
+  let Recepy_Creator =  `<hr class="hr-recepy">
+
+   <div class="div-createrecepy">
+
+       <h3 class="h3-recepylist">Rezept erstellt von </h3>
+
+      <div class="div-flexbox">
+       <img class="img-profile" src="img/profile.png" alt="">
+
+       <h3 class="h3-creatorrecepy">${creator}</h3>
+     </div>`;
+
+     return Recepy_Creator;
+
+
+
+
 }
 
 function createPreparation(preperation_step) {
