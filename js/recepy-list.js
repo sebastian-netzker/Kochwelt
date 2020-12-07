@@ -61,8 +61,10 @@ function showIngridientsList(id) {
 }
 
 function showPreparation(id) {
-  for (let i = 0; i < infoRecepy[id].preperation.length; i++) {
-    Preparation = createPreparation(infoRecepy[id].preperation[i]);
+
+  for(let i =0; i <infoRecepy[id].preperation.length; i++){
+  
+    Preparation = createPreparation(infoRecepy[id].preperation[i].preperation_step);
 
     document
       .getElementById("div-preparation")
