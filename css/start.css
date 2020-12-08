@@ -21,8 +21,9 @@ body{
 	
 .hauptcontainer {
 	margin-top: 100px;
-	text-align: center;
-	padding: 20px;
+	text-align: justify;
+	padding: 20px 200px;
+	color: rgb(57, 146, 43);
 }
 .navbar img {
 	object-fit: cover;
@@ -45,7 +46,7 @@ body{
     justify-content: space-around;
     align-items: center;
 	}
-	form {
+	.form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -59,7 +60,7 @@ body{
 		justify-content: space-between;
 
 	}
-	form input{
+	.form input{
 		font-family: 'Raleway';
 		width: 200px;
 		text-align: center;
@@ -68,4 +69,52 @@ body{
 		margin: 10px;
 		max-height: 20px;
 		border-radius: 10px;
+	}
+	.contact h1{
+		text-align: center !important;
+	}
+	.button {
+		margin: 20px;
+		padding: 20px 40px;
+		border-radius: 10px;
+		color: rgb(57,146,43);
+		font-family: 'Raleway';
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.contact textarea {
+		width: 600px;
+		height: 300px;
+	}
+
+	@media(max-width: 1000px){
+		.navigation-menu {
+			display: none;
+		}
+		.hauptcontainer{
+			font-size: 1.7em;
+			padding: 20px 50px !important;
+		}
+		.form {
+			font-size: 4em !important;
+		}
+		.form input {
+			font-size: 0.2em;
+			margin: 50px;
+		}
+		.contact textarea {
+			min-width: 300px !important;
+			max-width: 400px;
+			height: 250px !important;
+			font-size: 0.4em;
+			margin: 50px;
+		}
+		.button {
+			font-size: 0.5em !important;
+			margin: 50px;
+		}
+		.footer {
+			height: 200px;
+			font-size: 1.8em;
+		}
 	}
