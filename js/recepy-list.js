@@ -110,7 +110,7 @@ function showPreparation(id) {
 
 function showRecepyCreator(id) {
   
-    Recepy_Creator = createRecepy_Creator(
+    Recepy_Creator = createRecepyCreator(
       infoRecepy[id].creator
     );
 
