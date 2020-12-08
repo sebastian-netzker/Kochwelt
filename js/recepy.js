@@ -3,6 +3,10 @@ const BASE_SERVER_URL =
 
   let infoRecepy = [];
 
+/**
+ * This function show the recepy info
+ */
+
 
 function showRecepyInfo(){
 
@@ -33,6 +37,18 @@ function showRecepyInfo(){
 
 }  
 
+
+/**
+ * This function create the recepy info
+ * @param {string} picture_url - This string show the url from the pictures
+ * @param {string} recepy_name - This string show the name from the recepys
+ * @param {string} category  - This string show the category
+ * @param {number} preperation_time  - This number show the preperation time
+ * @param {number} calories  - This number show the calories
+ * @param {string} difficulty  This string show the difficulty
+ * @param {number} price  - This number show the price 
+ * @param {number} i  - This number make different id for the button onclick function
+ */
 
 function createRecepyInfo(
   picture_url,
@@ -68,6 +84,10 @@ function createRecepyInfo(
 }
 
 
+/**
+ * This function load the recepy JSON from the server
+ */
+
 function load() {
   loadJSONFromServer()
     .then(function (result) {
@@ -84,7 +104,9 @@ function load() {
 
 
 
-
+/**
+ * This function  load a JSON or JSON array to the server
+ */
 
 function loadJSONFromServer() {
   return new Promise(function (resolve, reject) {
@@ -111,6 +133,10 @@ function loadJSONFromServer() {
 }
 
 
+
+/**
+ * This function determines the proxy server settings
+ */
 
 function determineProxySettings() {
   if (window.location.href.indexOf(".developerakademie.com") > -1) {

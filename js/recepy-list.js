@@ -1,3 +1,8 @@
+
+/**
+ * This function load the recepy JSON from the Server
+ */
+
 function loadRecepyList() {
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -11,7 +16,7 @@ function loadRecepyList() {
       showRecepyListInfo(id);
       showIngridientsList(id);
       showPreparation(id);
-      showRecepy_Creator(id);
+      showRecepyCreator(id);
     })
     .catch(function (error) {
       // Fehler
@@ -19,10 +24,21 @@ function loadRecepyList() {
     });
 }
 
+
+/**
+ * This function create a new URL for each recepy
+ * @param {number} id - This number show each id for the different recepy 
+ */
+
 function openRecepy(id) {
   window.location.href = "./recepy-list.html?recepy=" + id;
 }
 
+
+/**
+ * This function show the recepy list info
+ * @param {number} id - This number is the id for respective recepy
+ */
 function showRecepyListInfo(id) {
   let RecepyListInfo = createRecepyListInfo(
     infoRecepy[id].recepy,
@@ -38,6 +54,12 @@ function showRecepyListInfo(id) {
     .getElementById("addRecepy-List")
     .insertAdjacentHTML("beforeend", RecepyListInfo);
 }
+
+
+/**
+ * This function show the ingridients List
+ * @param {number} id  - This number is the id for respective recepy
+ */
 
 function showIngridientsList(id) {
   for (let i = 0; i < infoRecepy[id].ingredients.length; i++) {
@@ -61,6 +83,12 @@ function showIngridientsList(id) {
   }
 }
 
+/**
+ * This function show the preperation
+ * @param {number} id  - This number is the id for respective recepy 
+ */
+
+
 function showPreparation(id) {
 
   for(let i =0; i <infoRecepy[id].preperation.length; i++){
@@ -73,7 +101,14 @@ function showPreparation(id) {
   }
 }
 
-function showRecepy_Creator(id) {
+
+/**
+ * This function show the recepy creator
+ * @param {number} id  - This number is the id for respective recepy
+ */
+
+
+function showRecepyCreator(id) {
   
     Recepy_Creator = createRecepy_Creator(
       infoRecepy[id].creator
@@ -86,7 +121,12 @@ function showRecepy_Creator(id) {
 }
 
 
-function createRecepy_Creator(creator) {
+/**
+ * This function create the recepy creator 
+ * @param {string} creator - This string show the creator from the recepy
+ */
+
+function createRecepyCreator(creator) {
 
   let Recepy_Creator =  `<hr class="hr-recepy">
 
@@ -107,11 +147,24 @@ function createRecepy_Creator(creator) {
 
 }
 
+/**
+ * This function create the preperation for the recepy
+ * @param {string} preperation_step - This string show the different preperation steps
+ */
+
 function createPreparation(preperation_step) {
   let Preparation = `<p class="p-preperation"> ${preperation_step} </p>`;
 
   return Preparation;
 }
+
+
+/**
+ * This function create the ingridients list for the even ingridient
+ * @param {string} ingridient_even - This string show the name 
+ * @param {number} ingridient_portion -  This number show the portion
+ * @param {string} ingridient_unit  - This string show the unit
+ */
 
 function createIngridientsList1(
   ingridient_even,
@@ -124,6 +177,13 @@ function createIngridientsList1(
   return IngridientsInfo;
 }
 
+/**
+ * This function create the ingridients list for the odd ingridient
+ * @param {string} ingridient_odd - This string show the name
+ * @param {number} ingridient_portion - This number show the portion
+ * @param {string} ingridient_unit  - This string show the unit
+ */
+
 function createIngridientsList2(
   ingridient_odd,
   ingridient_portion,
@@ -134,6 +194,16 @@ function createIngridientsList2(
   return IngridientsInfo;
 }
 
+/**
+ * This function create the recepy list info 
+ * @param {string} recepy_name - This string show the name
+ * @param {string} picture_url - This string show the url fromt he pictures
+ * @param {number} preperation_time - This number show the preperation time
+ * @param {string} difficulty - This string show the difficulty
+ * @param {number} calories - This number show the calories
+ * @param {number} price - This number show the price
+ */
+
 function createRecepyListInfo(
   recepy_name,
   picture_url,
@@ -141,7 +211,6 @@ function createRecepyListInfo(
   difficulty,
   calories,
   price
-  // creator
 ) {
   let RecepyListInfo = `<h1 class="h1-recepylist">${recepy_name}</h1>
     
@@ -172,31 +241,7 @@ function createRecepyListInfo(
 
         </div>`;
 
-  // <hr class="hr-recepy">
-
-  //  <div>
-
-  // <h3 class="h3-recepylist">Zubereitung</h3>
-
-  //  <div class="div-preperation">
-
-  // </div>
-
-  // <hr class="hr-recepy">
-
-  // <div class="div-createrecepy">
-
-  //     <h3 class="h3-recepylist">Rezept erstellt von </h3>
-
-  //     <div class="div-flexbox">
-  //      <img class="img-profile" src="img/profile.png" alt="">
-
-  //     <h3 class="h3-creatorrecepy">${creator}</h3>
-  //   </div>
-
-  // </div>
-
-  // </div>`;
+ 
 
   return RecepyListInfo;
 }
