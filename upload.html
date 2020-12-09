@@ -1,275 +1,117 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 
 <head>
-    <title> Kochwelt </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kochwelt - Impressum</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .uploaddiv {
-            margin-top: 130px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        fieldset {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
-    <script>
-
-        function createEntry(parentNodeId, prototypeId) {
-
-            // Clone node
-
-            parentNode = document.getElementById(parentNodeId);
-            childNode = document.getElementById(prototypeId).cloneNode('deep');
-
-            // Clean values and id (only first level of children is cleaned)
-
-            childNode.removeAttribute('id');
-            childNode.value = '';
-
-            if (childNode.children.length > 0) {
-                for (let i = 0; i < childNode.children.length; i++) {
-                    childNode.children[i].value = '';
-                    childNode.children[i].removeAttribute('id');
-                }
-            }
-
-            // Insert
-
-            lastChild = parentNode.children[parentNode.children.length - 2];
-            parentNode.insertBefore(childNode, lastChild);
-
-        }
-
-        function removeEntry(parentNodeId) {
-            parentNode = document.getElementById(parentNodeId);
-            if (parentNode.children.length <= 4) {
-                return;
-            }
-            else {
-                parentNode.children[parentNode.children.length - 3].remove();
-            }
-
-        }
-
-        function getIngredients() {
-            let array = [];
-            let ingredientNames = document.getElementsByName('ingredientName');
-            let ingredientUnits = document.getElementsByName('ingredientUnit');
-            let ingredientPortions = document.getElementsByName('ingredientPortion');
-
-            for (let i = 0; i < ingredientNames.length; i++) {
-                let ingredient = {};
-                ingredient.portion = ingredientPortions[i].value;
-                ingredient.unit = ingredientUnits[i].value;
-                ingredient.name = ingredientNames[i].value;
-                array.push(ingredient);
-            }
-
-            return array;
-
-        }
-
-        function getPreparationSteps() {
-            let array = [];
-            let preparations = document.getElementsByName('preparation');
-
-            for (let i = 0; i < preparations.length; i++) {
-                array.push(preparations[i].value);
-            }
-
-            return array;
-        }
-
-        function getRecipeObject() {
-            recipe = {};
-            recipe.recepy = document.getElementById('recepy').value;
-            recipe.ingredients = getIngredients();
-            recipe.difficulty = document.getElementById('difficulty').value;
-            recipe.preparation_time = document.getElementById('preparation_time').value;
-            recipe.calories = document.getElementById('calories').value;
-            recipe.category = document.getElementById('category').value;
-            recipe.price = document.getElementById('price').value;
-            recipe.preparation = getPreparationSteps();
-            recipe.creator = document.getElementById('creator').value;
-            return recipe;
-        }
-
-
-        function saveRecipe() {
-            let input = getRecipeObject();
-            updateStatus('Rezept wird gespeichert');
-            loadJSONFromServer()
-                .then(function (result) {
-                    myJSON = JSON.parse(result);
-                    myJSON.push(input);
-                    console.log(myJSON);
-                    saveJSONToServer(myJSON);
-                    updateStatus('Speichern erfolgreich!');
-                })
-                .catch(function (error) {
-                    updateStatus('Fehler beim Speichern');
-                    console.error('error', error);
-                });
-            return false;
-        }
-
-        const BASE_SERVER_URL = 'http://gruppe-49.developerakademie.com/dirkv2/Kochwelt/js/'; // Place of the backend
-
-        /**
-        * Saves a JSON or JSON Array to the Server
-        * payload {JSON | Array} - The payload you want to store
-        */
-        function saveJSONToServer(payload) {
-            return new Promise(function (resolve, reject) {
-                let xhttp = new XMLHttpRequest();
-                let proxy = determineProxySettings();
-                let serverURL = proxy + BASE_SERVER_URL + 'save_json.php';
-                xhttp.open('POST', serverURL);
-
-                xhttp.onreadystatechange = function (oEvent) {
-                    if (xhttp.readyState === 4) {
-                        if (xhttp.status >= 200 && xhttp.status <= 399) {
-                            resolve(xhttp.responseText);
-                        } else {
-                            reject(xhttp.statusText);
-                        }
-                    }
-                };
-
-                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xhttp.send(JSON.stringify(payload));
-
-            });
-        }
-
-        /**
-         * Loads a JSON or JSON Array to the Server
-         * payload {JSON | Array} - The payload you want to store
-         */
-        function loadJSONFromServer() {
-            return new Promise(function (resolve, reject) {
-                let xhttp = new XMLHttpRequest();
-                let proxy = determineProxySettings();
-                let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
-                xhttp.open('GET', serverURL);
-
-                xhttp.onreadystatechange = function (oEvent) {
-                    if (xhttp.readyState === 4) {
-                        if (xhttp.status >= 200 && xhttp.status <= 399) {
-                            resolve(xhttp.responseText);
-                        } else {
-                            reject(xhttp.statusText);
-                        }
-                    }
-                };
-
-                xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                xhttp.send();
-
-            });
-        }
-
-        function updateStatus(status) {
-            let result= document.getElementById('status');
-            result.innerHTML = status;
-        }
-
-        function determineProxySettings() {
-            if (window.location.href.indexOf('.developerakademie.com') > -1) {
-                return '';
-            } else {
-                return 'https://cors-anywhere.herokuapp.com/';
-            }
-        }
-
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/style-upload.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/upl"></script>
 </head>
 
 <body>
-    <div class="navigation-bar">
-
+    <header class="navigation-bar">
         <img class="logo" src="img/logo.png">
 
-        <nav class="navigation-menu">
-
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+        <nav class="navigation-menu dropdown">
+            <div class="dropbtn">Menu</div>
+            <a href="index.html"> Start </a><span>&nbsp; | &nbsp;</span>
+            <a href="recepy.html"> Rezept des Tages</a><span>&nbsp; | &nbsp;</span>
+            <a href="upload.html"> Upload </a><span>&nbsp; | &nbsp;</span>
+            <a href="contact.html"> Kontakt </a><span>&nbsp; | &nbsp;</span>
+            <a href="imprint.html"> Impressum </a>
         </nav>
-    </div>
-    <div class="uploaddiv">
-        <h1>Rezept einreichen</h1>
-        <form id="recepyform" onsubmit="return saveRecipe();">
-            <input type="text" id="recepy" placeholder="Rezeptname" required>
-            <span>Füge ein Bild hinzu</span>
-            <input type="file" id="image">
-            <fieldset id="ingredients">
-                <label for="ingredients">Zutaten</label>
-                <fieldset id="ingredientsPrototype" name="ingredient">
-                    <input type="text" name="ingredientName" placeholder="Zutat" required>
-                    <input type="number" name="ingredientPortion" placeholder="Menge" required max="9999">
-                    <select name="ingredientUnit">
-                        <option value="">Maßeinheit</option>
-                        <option></option>
-                        <option>g</option>
-                        <option>kg</option>
-                        <option>l</option>
-                        <option>ml</option>
-                        <option>TL</option>
-                        <option>EL</option>
-                        <option>Stück</option>
-                        <option>Prise</option>
-                    </select>
+
+
+    </header>
+
+
+
+    <main class="contact">
+        <div class="uploaddiv">
+            <h1>Rezept einreichen</h1>
+            <form class="recipeform" onsubmit="return saveRecipe();">
+                <input type="text" id="recepy" placeholder="Rezeptname" required>
+                <span>Füge ein Bild hinzu</span>
+                <input type="file" id="image">
+                <fieldset id="ingredients">
+                    <label for="ingredients">Zutaten</label>
+                    <fieldset id="ingredientsPrototype" name="ingredient">
+                        <input type="text" name="ingredientName" placeholder="Zutat" required>
+                        <input type="number" name="ingredientPortion" placeholder="Menge" required max="9999">
+                        <select name="ingredientUnit">
+                            <option value="">Maßeinheit</option>
+                            <option></option>
+                            <option>g</option>
+                            <option>kg</option>
+                            <option>l</option>
+                            <option>ml</option>
+                            <option>TL</option>
+                            <option>EL</option>
+                            <option>Stück</option>
+                            <option>Prise</option>
+                        </select>
+                    </fieldset>
+                    <input type="button" value="Zutat hinzufügen"
+                        onclick="createEntry('ingredients','ingredientsPrototype')">
+                    <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
                 </fieldset>
-                <input type="button" value="Zutat hinzufügen"
-                    onclick="createEntry('ingredients','ingredientsPrototype')">
-                <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
-            </fieldset>
 
-            <select id="difficulty">
-                <option value="">Schwierigkeit</option>
-                <option>Leicht</option>
-                <option>Mittel</option>
-                <option>Schwer</option>
-            </select>
+                <select id="difficulty">
+                    <option value="">Schwierigkeit</option>
+                    <option>Leicht</option>
+                    <option>Mittel</option>
+                    <option>Schwer</option>
+                </select>
 
-            <input type="number" id="preparation_time" placeholder="Zubereitungszeit in Minuten" max="999">
+                <input type="number" id="preparation_time" placeholder="Zubereitungszeit in Minuten" max="999">
 
-            <input type="number" id="calories" placeholder="Kalorien" maxlength="4">
+                <input type="number" id="calories" placeholder="Kalorien" maxlength="4">
 
-            <input type="text" id="category" placeholder="Kategorie">
+                <input type="text" id="category" placeholder="Kategorie">
 
-            <input type="number" id="price" placeholder="Preis" max="999">
+                <select type="number" id="price" placeholder="Preiskategorie">
+                    <option value="1">Niedrig</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Premium</option>
+                </select>
 
-            <fieldset id="preparations">
-                <span>Zubereitung</span>
-                <textarea name="preparation" rows="5" placeholder="Zubereitungsschritt" id="preparationPrototype" required></textarea>
-                <input type="button" value="Schritt hinzufügen"
-                    onclick="createEntry('preparations','preparationPrototype')">
-                <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
-            </fieldset>
+                <fieldset id="preparations">
+                    <span>Zubereitung</span>
+                    <textarea name="preparation" rows="5" placeholder="Zubereitungsschritt" id="preparationPrototype"
+                        required></textarea>
+                    <input type="button" value="Schritt hinzufügen"
+                        onclick="createEntry('preparations','preparationPrototype')">
+                    <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
+                </fieldset>
 
-            <input type="text" id="creator" placeholder="Ersteller*in" required>
+                <input type="text" id="creator" placeholder="Ersteller*in" required>
 
-            <input type="submit">
-            <label id="status"></label>
-        </form>
-    </div>
+                <input type="submit">
+                <label id="status"></label>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
+        <div class="text-center">
+            <div style="padding: 8px;"> Social Media Link </div>
+            <div>
+                <img class=" social-media-icon" src="img/facebook.png">
+                <img class="social-media-icon" src="img/twitter.png">
+                <img class="social-media-icon" src="img/instagram.png">
+                <img class="social-media-icon" src="img/tiktok.png">
+            </div>
+        </div>
+
+    </footer>
+
+
 </body>
 
 </html>
