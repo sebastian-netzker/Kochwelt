@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.form input{
+    font-family: 'Raleway';
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    max-height: 20px;
+    border-radius: 10px;
+}
+.button {
+    margin: 20px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    color: rgb(57,146,43);
+    font-family: 'Raleway';
+    font-size: 20px;
+    font-weight: bold;
+}
+.form textarea {
+    width: 600px;
+    height: 300px;
+}
+@media(max-width: 1000px){
+    .form {
+        font-size: 4em !important;
+    }
+    .form input {
+        font-size: 0.2em;
+        margin: 50px;
+    }
+    .form textarea {
+        min-width: 300px !important;
+        max-width: 400px;
+        height: 250px !important;
+        font-size: 0.4em;
+        margin: 50px;
+    }
+    .button {
+        font-size: 0.5em !important;
+        margin: 50px;
+    }
+}

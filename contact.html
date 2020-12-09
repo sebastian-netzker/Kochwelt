@@ -7,42 +7,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
 
-    <link rel="stylesheet" type="text/css" href="css/start.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	</head>
 <body>
-
-        <div class="navigation-bar">
-
-            <img class="logo" src="img/logo.png">
-    
-            <nav class="navigation-menu">
-    
-                <a href="index.html"> Start </a>&nbsp; | &nbsp;
-                <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-                <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-                <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-                <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+    <header class="navigation-bar">
+        <img class="logo" src="img/logo.png">
+        <nav class="navigation-menu">
+            <a href="index.html"> Start </a>&nbsp; | &nbsp;
+            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>
             </nav>
-            
-    
-        </div>
+    </header>
 
 
-        <div class="wrapper">
-        <div class="hauptcontainer contact">
+        <main>
             <h1>Kontaktformular</h1>
             <form class="form" method="POST" action="http://gruppe-49.developerakademie.com/send_mail/send_mail.php">
                 <input placeholder="Dein Name" name="name">
                 <textarea placeholder="Deine Nachricht" name="message"></textarea>
                 <button class="button" type="submit">Senden</button>
             </form>
-        </div>
-		<div class="footer">
-			<div>© Copyright 2020 - Kochwelt - Gruppe 49</div>
-			<a href="imprint.html">Impressum</a><a href="#">Datenschutz</a>
+        </main>
+        <footer class="footer">
+            <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
+            <div class="text-center">
+                <div style="padding: 8px;"> Social Media Link </div>
+                <div>
+                    <img class=" social-media-icon" src="img/facebook.png">
+                    <img class="social-media-icon" src="img/twitter.png">
+                    <img class="social-media-icon" src="img/instagram.png">
+                    <img class="social-media-icon" src="img/tiktok.png">
+                </div>
             </div>
-        </div>
+    
+        </footer>
 	</body>
 </html>
