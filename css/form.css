@@ -1,3 +1,4 @@
+
 .form {
     display: flex;
     flex-direction: column;
@@ -28,8 +29,31 @@
     width: 600px;
     height: 300px;
 }
+.contact{
+    margin-top: 100px;
+	text-align: justify;
+	padding: 20px 200px;
+   
+}
+.dropbtn{
+    display: none;
+}
 @media(max-width: 1000px){
-    .form {
+    .dropbtn{
+        display: block;
+    }
+    .dropdown{
+        display: flex;
+        flex-direction:column;
+        align-items: flex-end;
+    }
+      .dropdown span{
+        display: none;
+      }
+
+
+
+      .form {
         font-size: 4em !important;
     }
     .form input {
@@ -46,5 +70,10 @@
     .button {
         font-size: 0.5em !important;
         margin: 50px;
+    }
+    .contact{
+
+			font-size: 1.7em;
+			padding: 20px 50px !important;
     }
 }
