@@ -1,6 +1,4 @@
 body {
-    padding-left: 10px;
-    padding-right: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow-x: hidden;
 }
@@ -86,11 +84,14 @@ h2 {
 }
 
 footer {
-    padding: 40px;
-    margin-top: 40px;
-    background-color: rgba(197, 196, 196, 0.322);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: rgb(64, 59, 59);
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    
 }
 
 footer a {
