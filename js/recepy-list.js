@@ -1,4 +1,9 @@
 
+
+let number_portion = 4;
+
+let new_portion = 1;
+
 /**
  * This function load the recepy JSON from the Server
  */
@@ -23,6 +28,9 @@ function loadRecepyList() {
       console.error("Fehler beim laden!", error);
     });
 }
+
+
+
 
 
 /**
@@ -66,14 +74,14 @@ function showIngridientsList(id) {
     if (i % 2 == 0) {
       IngridientsInfo = createIngridientsList1(
         infoRecepy[id].ingredients[i].name,
-        infoRecepy[id].ingredients[i].portion,
-        infoRecepy[id].ingredients[i].unit
+        infoRecepy[id].ingredients[i].portion ,
+        infoRecepy[id].ingredients[i].unit 
       );
     } else if (i % 2 != 0) {
       IngridientsInfo = createIngridientsList2(
         infoRecepy[id].ingredients[i].name,
-        infoRecepy[id].ingredients[i].portion,
-        infoRecepy[id].ingredients[i].unit
+        infoRecepy[id].ingredients[i].portion ,
+        infoRecepy[id].ingredients[i].unit 
       );
     }
 
@@ -172,7 +180,7 @@ function createIngridientsList1(
   ingridient_unit
 ) {
   let IngridientsInfo = `
-                        <span class="span-white">${ingridient_portion} ${ingridient_unit}  ${ingridient_even}</span>`;
+                        <span id="span-white" class="span-white">${ingridient_portion } ${ingridient_unit}  ${ingridient_even}</span>`;
 
   return IngridientsInfo;
 }
@@ -189,7 +197,7 @@ function createIngridientsList2(
   ingridient_portion,
   ingridient_unit
 ) {
-  let IngridientsInfo = `<span class="span-grey"> ${ingridient_portion} ${ingridient_unit}   ${ingridient_odd}</span>`;
+  let IngridientsInfo = `<span id="span-grey" class="span-grey"> ${ingridient_portion } ${ingridient_unit}   ${ingridient_odd}</span>`;
 
   return IngridientsInfo;
 }
@@ -232,7 +240,8 @@ function createRecepyListInfo(
 
         <div class="div-number-ingridient">
 
-            <p class="p-number-ingridient1"> Zutaten für  <button type="button" class="btn btn-recepylist btn-outline-success">+</button> 4 <button type="button" class="btn btn-recepylist btn-outline-success">-</button>  </p>
+            <p class="p-number-ingridient1"> Zutaten für 
+             <button onclick="increaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">+</button><p class="number_portion" id="number_portion"> ${number_portion}<p> <button onclick="decreaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">-</button>  </p>
           <p class="p-number-ingridient2">Personen</p>
 
         </div> 
@@ -247,4 +256,37 @@ function createRecepyListInfo(
 }
 
 
+function increaseNumber() {
+
+  
+  number_portion++;
+  document.getElementById('number_portion').innerHTML = number_portion;
+
+  new_portion = number_portion - 3;
+
+  
+const urlParams = new URLSearchParams(window.location.search);
+
+const id = urlParams.get("recepy");
+
+ 
+
+
+  if(number_portion > 9 ){
+
+    number_portion = 9;
+  } 
+  
+
+}
+
+function decreaseNumber() {
+  number_portion--;
+  document.getElementById("number_portion").innerHTML = number_portion;
+
+    if(number_portion < 1 ){
+
+    number_portion = 1;
+  }
+}
 
