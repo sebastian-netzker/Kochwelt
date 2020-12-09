@@ -2,7 +2,7 @@
 <html lang="de">
 
 <head>
-    <title>Kochwelt - Impressum</title>
+    <title>Kochwelt - Rezept einreichen</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style-upload.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script src="js/upl"></script>
+    <script src="js/upload.js"></script>
 </head>
 
 <body>
     <header class="navigation-bar">
         <img class="logo" src="img/logo.png">
-
         <nav class="navigation-menu dropdown">
             <div class="dropbtn">Menu</div>
             <a href="index.html"> Start </a><span>&nbsp; | &nbsp;</span>
@@ -25,19 +24,19 @@
             <a href="contact.html"> Kontakt </a><span>&nbsp; | &nbsp;</span>
             <a href="imprint.html"> Impressum </a>
         </nav>
-
-
     </header>
-
-
-
     <main class="contact">
         <div class="uploaddiv">
             <h1>Rezept einreichen</h1>
             <form class="recipeform" onsubmit="return saveRecipe();">
-                <input type="text" id="recepy" placeholder="Rezeptname" required>
-                <span>Füge ein Bild hinzu</span>
-                <input type="file" id="image">
+                <fieldset>
+                    <label>Rezeptname</label>
+                    <input type="text" id="recepy" placeholder="Rezeptname" required>
+                </fieldset>
+                <fieldset>
+                    <label>Füge ein Bild hinzu</label>
+                    <input type="file" id="image">
+                </fieldset>
                 <fieldset id="ingredients">
                     <label for="ingredients">Zutaten</label>
                     <fieldset id="ingredientsPrototype" name="ingredient">
@@ -60,39 +59,42 @@
                         onclick="createEntry('ingredients','ingredientsPrototype')">
                     <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
                 </fieldset>
-
-                <select id="difficulty">
-                    <option value="">Schwierigkeit</option>
-                    <option>Leicht</option>
-                    <option>Mittel</option>
-                    <option>Schwer</option>
-                </select>
-
-                <input type="number" id="preparation_time" placeholder="Zubereitungszeit in Minuten" max="999">
-
-                <input type="number" id="calories" placeholder="Kalorien" maxlength="4">
-
-                <input type="text" id="category" placeholder="Kategorie">
-
-                <select type="number" id="price" placeholder="Preiskategorie">
-                    <option value="1">Niedrig</option>
-                    <option value="2">Normal</option>
-                    <option value="3">Premium</option>
-                </select>
-
                 <fieldset id="preparations">
-                    <span>Zubereitung</span>
+                    <label>Zubereitung</label>
                     <textarea name="preparation" rows="5" placeholder="Zubereitungsschritt" id="preparationPrototype"
                         required></textarea>
                     <input type="button" value="Schritt hinzufügen"
                         onclick="createEntry('preparations','preparationPrototype')">
                     <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
                 </fieldset>
+                <fieldset>
+                    <label>Weitere Informationen</label>
+                    <select id="difficulty">
+                        <option value="">Schwierigkeit</option>
+                        <option>Leicht</option>
+                        <option>Mittel</option>
+                        <option>Schwer</option>
+                    </select>
 
-                <input type="text" id="creator" placeholder="Ersteller*in" required>
+                    <input type="number" id="preparation_time" placeholder="Zubereitungszeit in Minuten" max="999">
 
-                <input type="submit">
+                    <input type="number" id="calories" placeholder="Kalorien" maxlength="4">
+
+                    <input type="text" id="category" placeholder="Kategorie">
+
+                    <select id="price">
+                        <option value="">Preis</option>
+                        <option value="1">Niedrig</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Premium</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label>Ersteller*in</label>
+                    <input type="text" id="creator" placeholder="Ersteller*in" required>
+                </fieldset>
                 <label id="status"></label>
+                <input type="submit" class="submit">
             </form>
         </div>
     </main>

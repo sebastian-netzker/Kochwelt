@@ -1,9 +1,42 @@
 .recipeform {
     display: flex;
     flex-direction: column;
+    width: 500px;
+    max-width: 80vw;
+    border: 1px;
+    
+}
+
+.recipeform * {
+    margin-top: 1rem;
+}
+
+.recipeform *:focus {
+    outline-color: green;
 }
 
 .recipeform fieldset {
     display: flex;
     flex-direction: column;
+}
+
+.recipeform input {
+    box-sizing: border-box;
+    padding: 10px;
+
+}
+
+.recipeform select {
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.recipeform label {
+    font-weight: bold;
+}
+
+.submit {
+    background-color: green;
+    color: white;
+    margin-bottom: 2rem;
 }
