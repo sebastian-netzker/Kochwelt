@@ -4,6 +4,9 @@ let number_portion = 4;
 
 let new_portion = 1;
 
+
+
+
 /**
  * This function load the recepy JSON from the Server
  */
@@ -65,7 +68,7 @@ function showRecepyListInfo(id) {
 
 
 /**
- * This function show the ingridients List
+ * This function show the ingridients list
  * @param {number} id  - This number is the id for respective recepy
  */
 
@@ -75,7 +78,7 @@ function showIngridientsList(id) {
       IngridientsInfo = createIngridientsList1(
         infoRecepy[id].ingredients[i].name,
         infoRecepy[id].ingredients[i].portion ,
-        infoRecepy[id].ingredients[i].unit 
+        infoRecepy[id].ingredients[i].unit
       );
     } else if (i % 2 != 0) {
       IngridientsInfo = createIngridientsList2(
@@ -90,6 +93,47 @@ function showIngridientsList(id) {
       .insertAdjacentHTML("beforeend", IngridientsInfo);
   }
 }
+
+
+
+
+/**
+ * This function show the ingridients list when a button is clicked
+ * @param {number} id - This number is the id for respective recepy 
+ */
+
+function showIngridientsListButton(id) {
+  for (let i = 0; i < infoRecepy[id].ingredients.length; i++) {
+    if (i % 2 == 0) {
+      IngridientsInfo = createIngridientsList1(
+        infoRecepy[id].ingredients[i].name,
+        (infoRecepy[id].ingredients[i].portion) *new_portion,
+        infoRecepy[id].ingredients[i].unit,
+        i
+      );
+    } else if (i % 2 != 0) {
+      IngridientsInfo = createIngridientsList2(
+        infoRecepy[id].ingredients[i].name,
+        (infoRecepy[id].ingredients[i].portion)*new_portion,
+        infoRecepy[id].ingredients[i].unit,
+        i
+      );
+    }
+
+    
+
+    document
+      .getElementById("div-ingridient")
+      .insertAdjacentHTML("beforeend", IngridientsInfo);
+  }
+}
+
+
+
+
+
+
+
 
 /**
  * This function show the preperation
@@ -180,7 +224,7 @@ function createIngridientsList1(
   ingridient_unit
 ) {
   let IngridientsInfo = `
-                        <span id="span-white" class="span-white">${ingridient_portion } ${ingridient_unit}  ${ingridient_even}</span>`;
+                        <span   class="span-white">${ingridient_portion } ${ingridient_unit}  ${ingridient_even}</span>`;
 
   return IngridientsInfo;
 }
@@ -197,7 +241,7 @@ function createIngridientsList2(
   ingridient_portion,
   ingridient_unit
 ) {
-  let IngridientsInfo = `<span id="span-grey" class="span-grey"> ${ingridient_portion } ${ingridient_unit}   ${ingridient_odd}</span>`;
+  let IngridientsInfo = `<span   class="span-grey"> ${ingridient_portion } ${ingridient_unit}   ${ingridient_odd}</span>`;
 
   return IngridientsInfo;
 }
@@ -256,37 +300,65 @@ function createRecepyListInfo(
 }
 
 
+/**
+ * This function increase the number of portions 
+ */
+
 function increaseNumber() {
 
-  
+  document.getElementById('div-ingridient').innerHTML = '';
   number_portion++;
   document.getElementById('number_portion').innerHTML = number_portion;
 
   new_portion = number_portion - 3;
 
-  
-const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(window.location.search);
 
-const id = urlParams.get("recepy");
+  const id = urlParams.get("recepy");
+
+ showIngridientsListButton(id);
 
  
 
 
-  if(number_portion > 9 ){
+  if(number_portion > 12 ){
 
-    number_portion = 9;
+    number_portion = 12;
+    document.getElementById("number_portion").innerHTML = number_portion;
   } 
   
 
 }
 
+
+
+/**
+ * This function decrease the number of portions
+ */
+
 function decreaseNumber() {
+
+   document.getElementById("div-ingridient").innerHTML = "";
   number_portion--;
   document.getElementById("number_portion").innerHTML = number_portion;
 
-    if(number_portion < 1 ){
 
-    number_portion = 1;
-  }
+    new_portion = number_portion - 2;
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const id = urlParams.get("recepy");
+
+    showIngridientsListButton(id);
+
+
+
+   if (number_portion < 4) {
+     number_portion = 4;
+     document.getElementById("number_portion").innerHTML = number_portion;
+   } 
+  
+
+    
 }
 
