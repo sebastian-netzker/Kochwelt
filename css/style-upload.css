@@ -9,6 +9,7 @@
 
 .recipeform * {
     margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
 }
 
 .recipeform *:focus {
@@ -23,12 +24,10 @@
 .recipeform input {
     box-sizing: border-box;
     padding: 10px;
-
 }
 
 .recipeform select {
     padding: 10px;
-    font-family: 'Raleway', sans-serif;
 }
 
 .recipeform label {
