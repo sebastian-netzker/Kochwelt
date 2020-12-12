@@ -1,4 +1,4 @@
-
+// Creates entry for ingredients or preparation steps. Specify the destination to add the node and give a protoype to clone
 function createEntry(parentNodeId, prototypeId) {
 
     // Clone node
@@ -25,6 +25,7 @@ function createEntry(parentNodeId, prototypeId) {
 
 }
 
+// Removes entry for ingredients or preparation steps
 function removeEntry(parentNodeId) {
     parentNode = document.getElementById(parentNodeId);
     if (parentNode.children.length <= 4) {
@@ -36,6 +37,7 @@ function removeEntry(parentNodeId) {
 
 }
 
+// Returns an array of objects for all ingredients
 function getIngredients() {
     let array = [];
     let ingredientNames = document.getElementsByName('ingredientName');
@@ -55,17 +57,23 @@ function getIngredients() {
 
 }
 
+// Returns an array of objects for all preparation steps
 function getPreparationSteps() {
     let array = [];
     let preparations = document.getElementsByName('preparation');
 
     for (let i = 0; i < preparations.length; i++) {
-        array.push(preparations[i].value);
+        let preparation = {
+            //lets match (wrong) spelling in JSON here
+            preperation_step: preparations[i].value,
+        };
+        array.push(preparation);
     }
 
     return array;
 }
 
+// Returns all recipe data as object
 function getRecipeObject() {
     let recipe = {
         recepy: document.getElementById('recepy').value,
@@ -75,12 +83,15 @@ function getRecipeObject() {
         calories: document.getElementById('calories').value,
         category: document.getElementById('category').value,
         price: document.getElementById('price').value,
-        preparation: getPreparationSteps(),
+        //lets match (wrong) spelling in JSON here
+        preperation: getPreparationSteps(),
         creator: document.getElementById('creator').value
     };
     return recipe;
 }
 
+
+// Send recipe data and image as POST request and handle the response
 function saveRecipe() {
     updateStatus('Rezept wird gespeichert');
     let formData = new FormData();
