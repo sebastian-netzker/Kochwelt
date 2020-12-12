@@ -82,18 +82,28 @@ function getRecipeObject() {
 }
 
 function saveRecipe() {
+    updateStatus('Rezept wird gespeichert');
     let formData = new FormData();
     let url = '/send_mail/write_recepy.php';
     let json = JSON.stringify(getRecipeObject());
     let image = document.getElementById('image').files[0];
-    formData.append('recipe',json);
-    formData.append('image',image);
+    formData.append('recipe', json);
+    formData.append('image', image);
     fetch(url, {
         method: 'POST',
         body: formData,
-      }).then((response) => {
+    }).then((response) => {
+        if (response.status === 201) {
+            updateStatus('Rezept erfolgreich gespeichert');
+        }
+        else if (response.status === 415) {
+            updateStatus('Bildformat darf nur jpg, gif oder png und nicht größer als 5 MB sein!');
+        }
+        else {
+            updateStatus('Fehler beim Speichern :(');
+        }
         console.log(response)
-      })
+    })
     return false;
 }
 

@@ -20,12 +20,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case ("POST"):
         //header("Access-Control-Allow-Origin: *");
-        if ($_POST['recipe'] & $_FILES['image']) {
+        if ($_POST['recipe'] && $_FILES['image']) {
             $newrecepy = json_decode($_POST['recipe'], true);
             $newfile  =  time() . $_FILES['image']['name'];
             if (!empty($_FILES)) {
                 $type = $_FILES['image']['type'];
-                if (isset($allowed_files[$type]) & $allowed_files[$type] < 5242880) {
+                if (isset($allowed_files[$type]) && $allowed_files[$type] < 5242880) {
                     $newrecepy['image'] = "img/" . $newfile;
                     array_push($arr, $newrecepy);
                     $txt = json_encode($arr);
