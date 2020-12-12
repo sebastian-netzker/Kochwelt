@@ -20,7 +20,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case ("POST"):
         //header("Access-Control-Allow-Origin: *");
-        if (count(json_decode($_POST['recipe'], true)) != 0) {
+        if ($_POST['recipe'] & $_FILES['image']) {
             $newrecepy = json_decode($_POST['recipe'], true);
             $newfile  =  time() . $_FILES['image']['name'];
             if (!empty($_FILES)) {
@@ -33,12 +33,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
                     fwrite($myfile, $txt);
                     fclose($myfile);
                     move_uploaded_file($_FILES['image']['tmp_name'], "../img/" . $newfile);
+                    http_response_code(201);
                     echo "Rezept erfolgreich gespeichert!";
-                }
-                else {
+                } else {
+                    http_response_code(415);
                     echo "Bildformat darf nur jpg, gif oder png und nicht größer als 5 MB sein!";
-                };
+                }
+            } else {
+                http_response_code(400);
+                echo "Daten fehlen";
             }
+        } else {
+            http_response_code(400);
+            echo "Daten fehlen";
         }
         exit;
 
