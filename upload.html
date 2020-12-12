@@ -1,31 +1,37 @@
-<!DOCTYPE html>
-<html lang="de">
+<html>
 
 <head>
-    <title>Kochwelt - Rezept einreichen</title>
+    <title> Kochwelt - Rezept einreichen </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/style-upload.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="js/upload.js"></script>
 </head>
 
 <body>
+
     <header class="navigation-bar">
+
+
         <img class="logo" src="img/logo.png">
-        <nav class="navigation-menu dropdown">
-            <div class="dropbtn">Menu</div>
-            <a href="index.html"> Start </a><span>&nbsp; | &nbsp;</span>
-            <a href="recepy.html"> Rezept des Tages</a><span>&nbsp; | &nbsp;</span>
-            <a href="upload.html"> Upload </a><span>&nbsp; | &nbsp;</span>
-            <a href="contact.html"> Kontakt </a><span>&nbsp; | &nbsp;</span>
-            <a href="imprint.html"> Impressum </a>
+
+        <nav class="navigation-menu">
+
+            <a href="index.html"> Start </a>&nbsp; | &nbsp;
+            <a href="recepy-list.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
         </nav>
+
     </header>
-    <main class="contact">
+
+    <main>
+
         <div class="uploaddiv">
             <h1>Rezept einreichen</h1>
             <form class="recipeform" onsubmit="return saveRecipe();">
@@ -97,12 +103,17 @@
                 <input type="submit" class="submit">
             </form>
         </div>
+
     </main>
 
     <footer class="footer">
+
         <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
+
         <div class="text-center">
+
             <div style="padding: 8px;"> Social Media Link </div>
+
             <div>
                 <img class=" social-media-icon" src="img/facebook.png">
                 <img class="social-media-icon" src="img/twitter.png">
@@ -112,8 +123,6 @@
         </div>
 
     </footer>
-
-
 </body>
 
 </html>
