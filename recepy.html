@@ -1,24 +1,20 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kochwelt - Rezepte Übersicht</title>
-
-     <link
+    <title>Kochwelt - Rezeptansicht</title>
+    <link
       rel="stylesheet"
       href="bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" type="text/css" href="css/style-recepy.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/recepy.js"></script>
     <script src="js/recepy-list.js"></script>
-
-    
 </head>
-<body onload="load(), loadRecepyList()">
+<body onload="loadRecepyList()">
 
-    <div class="navigation-bar">
+      <div class="navigation-bar">
 
         <img class="logo" src="img/logo.png">
 
@@ -34,19 +30,30 @@
 
     </div>
 
-<div style="margin-top: 60px;">
 
-    <h1>
-        Übersicht aller Rezepte
-        
-    </h1>
-
-
-    <div class="recepy-flexbox" id="category">
+    <div style="margin-top: 130px;" id="addRecepy-List">
 
     </div>
-</div>
-      <footer class="footer">
+
+    <div id="div-ingridient" class="div-ingridient">
+           
+        </div>
+
+
+      <hr class="hr-recepy">   
+
+    <h3 class="h3-recepylist">Zubereitung</h3>
+    
+    <div class="div-preparation" id="div-preparation">
+
+
+
+    </div>
+
+    <div id="div-creator"></div>
+
+    
+       <footer class="footer">
             <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
             <div class="text-center">
                 <div style="padding: 8px;"> Social Media Link </div>
@@ -59,10 +66,6 @@
             </div>
     
         </footer>
-
-
-
-
     
 </body>
 </html>
