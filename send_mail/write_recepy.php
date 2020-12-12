@@ -25,7 +25,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $newfile  =  time() . $_FILES['image']['name'];
             if (!empty($_FILES)) {
                 $type = $_FILES['image']['type'];
-                if (isset($allowed_files[$type]) && $allowed_files[$type] < 5242880) {
+                if (isset($allowed_files[$type]) && $_FILES['image']['size'] < 5242880) {
                     $newrecepy['image'] = "img/" . $newfile;
                     array_push($arr, $newrecepy);
                     $txt = json_encode($arr);
