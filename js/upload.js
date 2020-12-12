@@ -43,10 +43,11 @@ function getIngredients() {
     let ingredientPortions = document.getElementsByName('ingredientPortion');
 
     for (let i = 0; i < ingredientNames.length; i++) {
-        let ingredient = {};
-        ingredient.portion = ingredientPortions[i].value;
-        ingredient.unit = ingredientUnits[i].value;
-        ingredient.name = ingredientNames[i].value;
+        let ingredient = {
+            portion: ingredientPortions[i].value,
+            unit: ingredientUnits[i].value,
+            name: ingredientNames[i].value
+        };
         array.push(ingredient);
     }
 
@@ -66,16 +67,17 @@ function getPreparationSteps() {
 }
 
 function getRecipeObject() {
-    recipe = {};
-    recipe.recepy = document.getElementById('recepy').value;
-    recipe.ingredients = getIngredients();
-    recipe.difficulty = document.getElementById('difficulty').value;
-    recipe.preparation_time = document.getElementById('preparation_time').value;
-    recipe.calories = document.getElementById('calories').value;
-    recipe.category = document.getElementById('category').value;
-    recipe.price = document.getElementById('price').value;
-    recipe.preparation = getPreparationSteps();
-    recipe.creator = document.getElementById('creator').value;
+    let recipe = {
+        recepy: document.getElementById('recepy').value,
+        ingredients: getIngredients(),
+        difficulty: document.getElementById('difficulty').value,
+        preparation_time: document.getElementById('preparation_time').value,
+        calories: document.getElementById('calories').value,
+        category: document.getElementById('category').value,
+        price: document.getElementById('price').value,
+        preparation: getPreparationSteps(),
+        creator: document.getElementById('creator').value
+    };
     return recipe;
 }
 
