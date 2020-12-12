@@ -79,90 +79,23 @@ function getRecipeObject() {
     return recipe;
 }
 
-
 function saveRecipe() {
-    let input = getRecipeObject();
-    updateStatus('Rezept wird gespeichert');
-    loadJSONFromServer()
-        .then(function (result) {
-            myJSON = JSON.parse(result);
-            myJSON.push(input);
-            console.log(myJSON);
-            saveJSONToServer(myJSON);
-            updateStatus('Speichern erfolgreich!');
-        })
-        .catch(function (error) {
-            updateStatus('Fehler beim Speichern');
-            console.error('error', error);
-        });
+    let formData = new FormData();
+    let url = '/send_mail/write_recepy.php';
+    let json = JSON.stringify(getRecipeObject());
+    let image = document.getElementById('image').files[0];
+    formData.append('recipe',json);
+    formData.append('image',image);
+    fetch(url, {
+        method: 'POST',
+        body: formData,
+      }).then((response) => {
+        console.log(response)
+      })
     return false;
-}
-
-const BASE_SERVER_URL = 'http://gruppe-49.developerakademie.com/dirkv2/Kochwelt/js/'; // Place of the backend
-
-/**
-* Saves a JSON or JSON Array to the Server
-* payload {JSON | Array} - The payload you want to store
-*/
-function saveJSONToServer(payload) {
-    return new Promise(function (resolve, reject) {
-        let xhttp = new XMLHttpRequest();
-        let proxy = determineProxySettings();
-        let serverURL = proxy + BASE_SERVER_URL + 'save_json.php';
-        xhttp.open('POST', serverURL);
-
-        xhttp.onreadystatechange = function (oEvent) {
-            if (xhttp.readyState === 4) {
-                if (xhttp.status >= 200 && xhttp.status <= 399) {
-                    resolve(xhttp.responseText);
-                } else {
-                    reject(xhttp.statusText);
-                }
-            }
-        };
-
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send(JSON.stringify(payload));
-
-    });
-}
-
-/**
- * Loads a JSON or JSON Array to the Server
- * payload {JSON | Array} - The payload you want to store
- */
-function loadJSONFromServer() {
-    return new Promise(function (resolve, reject) {
-        let xhttp = new XMLHttpRequest();
-        let proxy = determineProxySettings();
-        let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
-        xhttp.open('GET', serverURL);
-
-        xhttp.onreadystatechange = function (oEvent) {
-            if (xhttp.readyState === 4) {
-                if (xhttp.status >= 200 && xhttp.status <= 399) {
-                    resolve(xhttp.responseText);
-                } else {
-                    reject(xhttp.statusText);
-                }
-            }
-        };
-
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send();
-
-    });
 }
 
 function updateStatus(status) {
     let result = document.getElementById('status');
     result.innerHTML = status;
-}
-
-function determineProxySettings() {
-    if (window.location.href.indexOf('.developerakademie.com') > -1) {
-        return '';
-    } else {
-        return 'https://cors-anywhere.herokuapp.com/';
-    }
 }
