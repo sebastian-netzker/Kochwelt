@@ -99,11 +99,15 @@ footer a:hover {
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 30px;
 }
+
+
 
 .recepy-child {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .recepy-flexbox {
@@ -122,7 +126,9 @@ h6 {
     background-color: rgba(74, 184, 30, 0.74);
     width: 45%;
     text-align: center;
-    margin-left: 145px;
+    display: table;
+    margin: auto;
+    
 }
 
 button {
@@ -261,15 +267,23 @@ p {
     font-size: 27px;
 }
 
-
-h1{
-    padding-top: 100px;
+h1 {
+    padding-top: 140px;
     text-align: center;
+}
+
+.h6-category{
+
+    text-align: center;
+
+
+
 }
 
 @media(max-width:600px) {
     .recepy, .img {
         width: 100%;
+        display: table;
     }
     .img-icon, .img-icon-recepylist {
         width: 30px;
@@ -277,6 +291,7 @@ h1{
     }
     .btn-center {
         display: block;
+        text-align: center;
     }
     .btn-recepylist {
         width: 50px;
@@ -284,17 +299,11 @@ h1{
     .h1-recepylist {
         font-size: 40px;
     }
-
-
-    button{
-
+    button {
         width: 150px;
+        left: inherit;
     }
-
-
-    .div-number-ingridient{
+    .div-number-ingridient {
         width: 100%;
     }
-
-    
 }
