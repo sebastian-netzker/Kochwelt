@@ -13,14 +13,6 @@ body {
     justify-content: flex-end;
 }
 
-.headline {
-    position: relative;
-    left: 35px;
-    top: 10px;
-    color: rgb(141, 137, 137);
-    font-weight: bold;
-}
-
 .menu a {
     position: relative;
     color: rgb(131, 128, 128);
@@ -36,12 +28,6 @@ body {
 .line {
     position: relative;
     top: 0px;
-}
-
-h1 {
-    color: grey;
-    text-align: center;
-    padding-bottom: 30px;
 }
 
 h2 {
@@ -83,27 +69,12 @@ h2 {
     padding-left: 20px;
 }
 
-footer {
+.recepy-overview {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: rgb(64, 59, 59);
-    color: white;
-    font-size: 18px;
-    margin-top: 15px;
-    
-}
-
-footer a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    padding: 30px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    color: rgb(126, 126, 126);
+    flex-direction: column;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
 }
 
 .recepy {

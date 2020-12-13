@@ -13,13 +13,14 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 32px;
-    margin-right: 32px;
     flex-grow: 1;
 }
 
 .navigation-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: space-around;
     padding: 8px;
@@ -43,6 +44,132 @@ main {
     transition: all 225ms ease-in-out;
     border-bottom: 4px solid rgb(57, 146, 43);
     font-weight: bold;
+}
+
+.search-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.search-input {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.search-box:hover>.search-input {
+    width: 240px;
+    background: rgb(57, 146, 43);
+}
+
+.search-box:hover {
+    background-color: rgb(57, 146, 43);
+}
+
+.search-box:hover>.search-btn {
+    background-color: white;
+}
+
+input[id="text"]::-webkit-input-placeholder {
+    color: white;
+}
+
+.search-btn {
+    width: 40px;
+    height: 40px;
+    float: right;
+    padding: 4px;
+    border-radius: 100%;
+    background-color: rgb(57, 146, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.headline-slide-show {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-show {
+    overflow: hidden;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.slide-bar {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slide-show infinite;
+}
+
+.slide-bar img {
+    width: 5%;
+    float: left;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+@keyframes slide-show {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
 }
 
 .footer {
