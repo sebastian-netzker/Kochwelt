@@ -91,7 +91,6 @@ footer {
     color: white;
     font-size: 18px;
     margin-top: 15px;
-    
 }
 
 footer a {
@@ -272,4 +271,36 @@ p {
 .number_portion {
     color: black;
     font-size: 27px;
+}
+
+@media(max-width:600px) {
+    .recepy, .img {
+        width: 100%;
+    }
+    .img-icon, .img-icon-recepylist {
+        width: 30px;
+        height: 30px;
+    }
+    .btn-center {
+        display: block;
+    }
+    .btn-recepylist {
+        width: 50px;
+    }
+    .h1-recepylist {
+        font-size: 40px;
+    }
+
+
+    button{
+
+        width: 150px;
+    }
+
+
+    .div-number-ingridient{
+        width: 100%;
+    }
+
+    
 }

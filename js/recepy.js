@@ -76,7 +76,7 @@ function createRecepyInfo(
        <p><img class="img-icon" src="img/euro.png">${price}/3</p>
      </div>
      <hr class="hr-recepy">
-     <button onclick="openRecepy(${i})" type="button" class="btn btn-success">Rezept öffnen</button>
+    <div class="btn-center"> <button  onclick="openRecepy(${i})" type="button" class="btn btn-success">Rezept öffnen</button> </div>
   </div>`;
   
 
