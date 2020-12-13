@@ -72,15 +72,12 @@ h2 {
 .recepy-overview {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     flex-direction: column;
     margin-top: 15vh;
     margin-bottom: 5vh;
-=======
     background-color: rgb(64, 59, 59);
     color: white;
     font-size: 18px;
-    margin-top: 15px;
 }
 
 footer a {
@@ -93,7 +90,6 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     color: rgb(126, 126, 126);
->>>>>>> 721544fe3f6462fb7ade05c1182a99c83819abcf
 }
 
 .recepy {
