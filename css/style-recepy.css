@@ -72,11 +72,9 @@ h2 {
 .recepy-overview {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     flex-direction: column;
     margin-top: 15vh;
     margin-bottom: 5vh;
-=======
     background-color: rgb(64, 59, 59);
     color: white;
     font-size: 18px;
@@ -93,7 +91,6 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     color: rgb(126, 126, 126);
->>>>>>> 721544fe3f6462fb7ade05c1182a99c83819abcf
 }
 
 .recepy {
@@ -169,6 +166,7 @@ p {
 .h1-recepylist {
     color: black;
     padding-top: 20px;
+    padding-bottom: 20px;
     font-size: 50px;
 }
 
@@ -238,7 +236,7 @@ p {
 
 .div-createrecepy {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .img-profile {
@@ -262,6 +260,12 @@ p {
 .number_portion {
     color: black;
     font-size: 27px;
+}
+
+
+h1{
+    padding-top: 100px;
+    text-align: center;
 }
 
 @media(max-width:600px) {
