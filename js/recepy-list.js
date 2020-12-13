@@ -286,6 +286,9 @@ function createRecepyListInfo(
 
             <p class="p-number-ingridient1"> Zutaten für 
              <button onclick="increaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">+</button><p class="number_portion" id="number_portion"> ${number_portion}<p> <button onclick="decreaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">-</button>  </p>
+
+
+             
           <p class="p-number-ingridient2">Personen</p>
 
         </div> 

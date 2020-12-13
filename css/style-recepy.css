@@ -72,9 +72,28 @@ h2 {
 .recepy-overview {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     flex-direction: column;
     margin-top: 15vh;
     margin-bottom: 5vh;
+=======
+    background-color: rgb(64, 59, 59);
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 30px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: rgb(126, 126, 126);
+>>>>>>> 721544fe3f6462fb7ade05c1182a99c83819abcf
 }
 
 .recepy {
@@ -243,4 +262,36 @@ p {
 .number_portion {
     color: black;
     font-size: 27px;
+}
+
+@media(max-width:600px) {
+    .recepy, .img {
+        width: 100%;
+    }
+    .img-icon, .img-icon-recepylist {
+        width: 30px;
+        height: 30px;
+    }
+    .btn-center {
+        display: block;
+    }
+    .btn-recepylist {
+        width: 50px;
+    }
+    .h1-recepylist {
+        font-size: 40px;
+    }
+
+
+    button{
+
+        width: 150px;
+    }
+
+
+    .div-number-ingridient{
+        width: 100%;
+    }
+
+    
 }

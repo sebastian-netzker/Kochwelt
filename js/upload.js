@@ -1,4 +1,4 @@
-
+// Creates entry for ingredients or preparation steps. Specify the destination to add the node and give a protoype to clone
 function createEntry(parentNodeId, prototypeId) {
 
     // Clone node
@@ -25,6 +25,7 @@ function createEntry(parentNodeId, prototypeId) {
 
 }
 
+// Removes entry for ingredients or preparation steps
 function removeEntry(parentNodeId) {
     parentNode = document.getElementById(parentNodeId);
     if (parentNode.children.length <= 4) {
@@ -36,6 +37,7 @@ function removeEntry(parentNodeId) {
 
 }
 
+// Returns an array of objects for all ingredients
 function getIngredients() {
     let array = [];
     let ingredientNames = document.getElementsByName('ingredientName');
@@ -43,10 +45,11 @@ function getIngredients() {
     let ingredientPortions = document.getElementsByName('ingredientPortion');
 
     for (let i = 0; i < ingredientNames.length; i++) {
-        let ingredient = {};
-        ingredient.portion = ingredientPortions[i].value;
-        ingredient.unit = ingredientUnits[i].value;
-        ingredient.name = ingredientNames[i].value;
+        let ingredient = {
+            portion: ingredientPortions[i].value,
+            unit: ingredientUnits[i].value,
+            name: ingredientNames[i].value
+        };
         array.push(ingredient);
     }
 
@@ -54,115 +57,68 @@ function getIngredients() {
 
 }
 
+// Returns an array of objects for all preparation steps
 function getPreparationSteps() {
     let array = [];
     let preparations = document.getElementsByName('preparation');
 
     for (let i = 0; i < preparations.length; i++) {
-        array.push(preparations[i].value);
+        let preparation = {
+            //lets match (wrong) spelling in JSON here
+            preperation_step: preparations[i].value,
+        };
+        array.push(preparation);
     }
 
     return array;
 }
 
+// Returns all recipe data as object
 function getRecipeObject() {
-    recipe = {};
-    recipe.recepy = document.getElementById('recepy').value;
-    recipe.ingredients = getIngredients();
-    recipe.difficulty = document.getElementById('difficulty').value;
-    recipe.preparation_time = document.getElementById('preparation_time').value;
-    recipe.calories = document.getElementById('calories').value;
-    recipe.category = document.getElementById('category').value;
-    recipe.price = document.getElementById('price').value;
-    recipe.preparation = getPreparationSteps();
-    recipe.creator = document.getElementById('creator').value;
+    let recipe = {
+        recepy: document.getElementById('recepy').value,
+        ingredients: getIngredients(),
+        difficulty: document.getElementById('difficulty').value,
+        preparation_time: document.getElementById('preparation_time').value,
+        calories: document.getElementById('calories').value,
+        category: document.getElementById('category').value,
+        price: document.getElementById('price').value,
+        //lets match (wrong) spelling in JSON here
+        preperation: getPreparationSteps(),
+        creator: document.getElementById('creator').value
+    };
     return recipe;
 }
 
 
+// Send recipe data and image as POST request and handle the response
 function saveRecipe() {
-    let input = getRecipeObject();
     updateStatus('Rezept wird gespeichert');
-    loadJSONFromServer()
-        .then(function (result) {
-            myJSON = JSON.parse(result);
-            myJSON.push(input);
-            console.log(myJSON);
-            saveJSONToServer(myJSON);
-            updateStatus('Speichern erfolgreich!');
-        })
-        .catch(function (error) {
-            updateStatus('Fehler beim Speichern');
-            console.error('error', error);
-        });
+    let formData = new FormData();
+    let url = '/send_mail/write_recepy.php';
+    let json = JSON.stringify(getRecipeObject());
+    let image = document.getElementById('image').files[0];
+    formData.append('recipe', json);
+    formData.append('image', image);
+    fetch(url, {
+        method: 'POST',
+        body: formData,
+    }).then((response) => {
+        if (response.status === 201) {
+            updateStatus('Rezept erfolgreich gespeichert');
+        }
+        else if (response.status === 415) {
+            updateStatus('Bildformat darf nur jpg, gif oder png und nicht größer als 5 MB sein!');
+        }
+        else {
+            updateStatus('Fehler beim Speichern :(');
+        }
+        console.log(response)
+    })
     return false;
-}
-
-const BASE_SERVER_URL = 'http://gruppe-49.developerakademie.com/dirkv2/Kochwelt/js/'; // Place of the backend
-
-/**
-* Saves a JSON or JSON Array to the Server
-* payload {JSON | Array} - The payload you want to store
-*/
-function saveJSONToServer(payload) {
-    return new Promise(function (resolve, reject) {
-        let xhttp = new XMLHttpRequest();
-        let proxy = determineProxySettings();
-        let serverURL = proxy + BASE_SERVER_URL + 'save_json.php';
-        xhttp.open('POST', serverURL);
-
-        xhttp.onreadystatechange = function (oEvent) {
-            if (xhttp.readyState === 4) {
-                if (xhttp.status >= 200 && xhttp.status <= 399) {
-                    resolve(xhttp.responseText);
-                } else {
-                    reject(xhttp.statusText);
-                }
-            }
-        };
-
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send(JSON.stringify(payload));
-
-    });
-}
-
-/**
- * Loads a JSON or JSON Array to the Server
- * payload {JSON | Array} - The payload you want to store
- */
-function loadJSONFromServer() {
-    return new Promise(function (resolve, reject) {
-        let xhttp = new XMLHttpRequest();
-        let proxy = determineProxySettings();
-        let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
-        xhttp.open('GET', serverURL);
-
-        xhttp.onreadystatechange = function (oEvent) {
-            if (xhttp.readyState === 4) {
-                if (xhttp.status >= 200 && xhttp.status <= 399) {
-                    resolve(xhttp.responseText);
-                } else {
-                    reject(xhttp.statusText);
-                }
-            }
-        };
-
-        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhttp.send();
-
-    });
 }
 
 function updateStatus(status) {
     let result = document.getElementById('status');
     result.innerHTML = status;
-}
-
-function determineProxySettings() {
-    if (window.location.href.indexOf('.developerakademie.com') > -1) {
-        return '';
-    } else {
-        return 'https://cors-anywhere.herokuapp.com/';
-    }
 }
