@@ -54,8 +54,9 @@ main {
 }
 
 .search-box {
+    /*
     display: flex;
-    align-items: center;
+    align-items: center;*/
     position: absolute;
     top: 27%;
     left: 50%;
