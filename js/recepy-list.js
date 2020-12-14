@@ -284,18 +284,35 @@ function createRecepyListInfo(
 
         <div class="div-number-ingridient">
 
-            <p class="p-number-ingridient1"> Zutaten für 
-             <button onclick="increaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">+</button><p class="number_portion" id="number_portion"> ${number_portion}<p> <button onclick="decreaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">-</button>  </p>
+        <div class="div-number-ingridient-child">
 
+            <p class="p-number-ingridient1"> Anzahl der Portionen: <p class="number_portion" id ="number_portion">  ${number_portion}</p> </p>
 
-             
-          <p class="p-number-ingridient2">Personen</p>
+            </div>
+
+            <div class="div-number-ingridient-child">
+
+            <button onclick="increaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">+</button>
+
+             <button onclick="decreaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">-</button> 
+
+             </div>
+
+            
+            
+          
 
         </div> 
 
        
 
         </div>`;
+
+       // <button onclick="increaseNumber()" type="button" class="btn btn-recepylist btn-outline-success">+<///button><p class="number_portion" id="number_portion"> ${number_portion}<p> <button onclick="decreaseNumber()//" type="button" class="btn btn-recepylist btn-outline-success">-</button> 
+
+
+             
+         // <p class="p-number-ingridient2">Personen</p>
 
  
 

@@ -102,8 +102,6 @@ footer a:hover {
     margin-bottom: 30px;
 }
 
-
-
 .recepy-child {
     display: flex;
     justify-content: space-between;
@@ -128,7 +126,6 @@ h6 {
     text-align: center;
     display: table;
     margin: auto;
-    
 }
 
 button {
@@ -196,6 +193,7 @@ p {
 .div-number-ingridient {
     display: flex;
     padding-left: 90px;
+    text-align: center;
 }
 
 .btn-recepylist {
@@ -272,13 +270,20 @@ h1 {
     text-align: center;
 }
 
-.h6-category{
-
+.h6-category {
     text-align: center;
-
-
-
 }
+
+.div-number-ingridient-child {
+
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
 
 @media(max-width:600px) {
     .recepy, .img {
@@ -304,6 +309,33 @@ h1 {
         left: inherit;
     }
     .div-number-ingridient {
-        width: 100%;
+        padding-left: inherit;
+        margin: auto;
+        width: 50%;
+    }
+    .h3-creatorrecepy {
+        padding-left: 10px;
+    }
+    .img-profile {
+        padding-left: 0px;
+        margin-left: 50px;
+        margin-right: 30px;
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        border: 20px black;
+    }
+    .recepylist-child {
+        display: inherit;
+        padding-left: 35px;
+        padding-right: 20px;
+    }
+    .p-recepylist {
+        width: 95%;
+        text-align: center;
+    }
+    .p-number-ingridient1 {
+        padding-left: inherit;
+        text-align: center;
     }
 }
