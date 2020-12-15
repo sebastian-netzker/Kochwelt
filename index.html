@@ -9,62 +9,63 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/recepy.js"></script>
     <script type="text/javascript">
-    	function ShowList(){
-    		var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
+        function ShowList() {
+            var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
 
-    		searchdiv = document.getElementById("search-list");
-    		input = document.getElementById("text");
-    		filter = input.value.toUpperCase();
-			len = input.value.length;
-			if(len > 2){
-				loadJSONFromServer()
-					.then(function (result) {
-      					//then(function (variable vom server))
-      					//console.log("Laden erfolgreich!", result);
-      					my_recepy = JSON.parse(result);
-						//console.log(my_recepy);
-						searchdiv.innerHTML = ""
-						for (var i = 0; i < my_recepy.length; i++){
-							if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
-								searchdiv.innerHTML += '<a href="recepy-list.html?recepy='+i+'">'+my_recepy[i].recepy+'</a>';
-							}
-						}
-      				})
-    				.catch(function (error) {
-      					// Fehler
-    					console.error("Fehler beim laden!", error);
-    				});
-				
-			}else{
-				searchdiv.innerHTML = "";
-			}
-    		return;
-    	}
+            searchdiv = document.getElementById("search-list");
+            input = document.getElementById("text");
+            filter = input.value.toUpperCase();
+            len = input.value.length;
+            if (len > 2) {
+                loadJSONFromServer()
+                    .then(function (result) {
+                        //then(function (variable vom server))
+                        //console.log("Laden erfolgreich!", result);
+                        my_recepy = JSON.parse(result);
+                        //console.log(my_recepy);
+                        searchdiv.innerHTML = ""
+                        for (var i = 0; i < my_recepy.length; i++) {
+                            if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
+                                searchdiv.innerHTML += '<a href="recepy-list.html?recepy=' + i + '">' + my_recepy[i].recepy + '</a>';
+                            }
+                        }
+                    })
+                    .catch(function (error) {
+                        // Fehler
+                        console.error("Fehler beim laden!", error);
+                    });
+
+            } else {
+                searchdiv.innerHTML = "";
+            }
+            return;
+        }
     </script>
     <style type="text/css">
+        #search-list {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            margin: auto;
+            right: 0;
+            text-align: center;
+            z-index: 1;
+            background-color: rgb(92, 153, 100);
+            min-width: 300px;
+            max-width: 40vw;
+        }
 
-    	#search-list{
-    		    position: absolute;
-    top: 30%;
-    left: 0;
-    margin: auto;
-    right: 0;
-    text-align: center;
-    z-index: 1;
-    	}
-    	#search-list a {
-			color: black;
-			padding: 12px 16px;
-			text-decoration: none;
-			display: block;
-		
-			background-color: white;
-		}
-		#search-list a:hover {
-			background-color: #ddd;
-			cursor: pointer;
-		}
-		
+        #search-list a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-list a:hover {
+            background-color: green;
+            cursor: pointer;
+        }
     </style>
 </head>
 
