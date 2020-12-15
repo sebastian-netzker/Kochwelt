@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/form.css">
+    <!--link rel="stylesheet" href="css/form.css"-->
+    <link rel="stylesheet" type="text/css" href="css/style-upload.css">
 </head>
 
 <body>
@@ -30,14 +31,15 @@
 
     <main>
 
-        <div class="contact">
+        <div class="uploaddiv">
 
             <h1>Kontaktformular</h1>
 
-            <form class="form" method="POST" action="http://gruppe-49.developerakademie.com/send_mail/send_mail.php">
+
+            <form class="recipeform" method="POST" action="http://gruppe-49.developerakademie.com/send_mail/send_mail.php">
                 <input placeholder="Dein Name" name="name">
-                <textarea placeholder="Deine Nachricht" name="message"></textarea>
-                <button class="button" type="submit">Senden</button>
+                <textarea placeholder="Deine Nachricht" name="message" style="height: 300px;"></textarea>
+                <input class="submit" type="submit">
             </form>
         </div>
 

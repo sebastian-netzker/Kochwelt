@@ -7,6 +7,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/recepy.js"></script>
+    <script type="text/javascript">
+        function ShowList() {
+            var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
+
+            searchdiv = document.getElementById("search-list");
+            input = document.getElementById("text");
+            filter = input.value.toUpperCase();
+            len = input.value.length;
+            if (len > 2) {
+                loadJSONFromServer()
+                    .then(function (result) {
+                        //then(function (variable vom server))
+                        //console.log("Laden erfolgreich!", result);
+                        my_recepy = JSON.parse(result);
+                        //console.log(my_recepy);
+                        searchdiv.innerHTML = ""
+                        for (var i = 0; i < my_recepy.length; i++) {
+                            if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
+                                searchdiv.innerHTML += '<a href="recepy-list.html?recepy=' + i + '">' + my_recepy[i].recepy + '</a>';
+                            }
+                        }
+                    })
+                    .catch(function (error) {
+                        // Fehler
+                        console.error("Fehler beim laden!", error);
+                    });
+
+            } else {
+                searchdiv.innerHTML = "";
+            }
+            return;
+        }
+    </script>
+    <style type="text/css">
+        #search-list {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            margin: auto;
+            right: 0;
+            text-align: center;
+            z-index: 1;
+            background-color: rgb(92, 153, 100);
+            min-width: 300px;
+            max-width: 40vw;
+        }
+
+        #search-list a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-list a:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +82,7 @@
             <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
             <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
             <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+            <a href="imprint.html"> Impressum </a>
         </nav>
 
     </header>
@@ -36,6 +96,7 @@
             <input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen">
             <a href="#" class="search-btn text-center"> <img class="btn-img" src="img/search-solid.svg"> </a>
 
+<<<<<<< HEAD
         </div>
 
         <div class="headline-slide-show">
@@ -60,6 +121,17 @@
                 <div> <img src="img/potato_soup.jpg"> </div>
                 <div> <img src="img/scheepcheese_sweetpotato.jpg"> </div>
                 <div> <img src="img/sushi.jpg"> </div>
+=======
+            <div class="search-box">
+            	<input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen" onkeyup="ShowList()">
+                <span class="search-btn text-center"> <img style="width: 24px;" src="img/search-solid.svg"> </span>
+                
+            </div>
+            <div id="search-list"></div>
+            <div class="headline-slide-show">
+                <h2> <b> Lust auf was neues?</b> </h2>
+            </div>
+>>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
 
 
             </div>
