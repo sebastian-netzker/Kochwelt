@@ -1,6 +1,7 @@
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif !important;
+    display: flex !important;
+    min-height: 100vh !important;
 }
 
 .menu {
@@ -75,9 +76,13 @@ h2 {
     flex-direction: column;
     margin-top: 15vh;
     margin-bottom: 5vh;
-    background-color: rgb(64, 59, 59);
-    color: white;
-    font-size: 18px;
+}
+
+.addRecepy-List {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer a {
@@ -138,40 +143,35 @@ p {
     font-size: 20px;
 }
 
-.hr-recepy {
-    width: 95%;
-}
-
 .img-recepylist {
     object-fit: cover;
-    height: 500px;
-    width: 90%;
-    display: block;
+    height: 50vh;
+    width: 50vw;
+    display: table-row;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
 }
 
+.recepy-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .recepylist-child {
     display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
+    justify-content: space-between;
 }
 
 .p-recepylist {
     background-color: rgba(224, 205, 116, 0.192);
 }
 
-.h1-recepylist {
-    color: black;
-    padding-top: 20px;
-    font-size: 50px;
-}
-
 .h3-recepylist {
     font-size: 30px;
-    padding-left: 50px;
-    text-align: left;
 }
 
 .p-number-ingridient1 {
@@ -188,7 +188,8 @@ p {
 
 .div-number-ingridient {
     display: flex;
-    padding-left: 90px;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-recepylist {
@@ -202,6 +203,7 @@ p {
     flex-direction: column;
     font-size: 20px;
     align-items: center;
+    width: 48vw;
 }
 
 .span-white {
@@ -222,8 +224,8 @@ p {
     width: 80%;
 }
 
-.div-preperation {
-    padding-left: 40px;
+.div-preparation {
+    max-width: 50%;
 }
 
 .p-preperation {
@@ -232,27 +234,10 @@ p {
     padding-left: 70px;
 }
 
-.div-createrecepy {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 .img-profile {
-    padding-left: 100px;
     width: 225px;
     height: 150px;
-    object-fit: cover;
-    border: 20px black;
-}
-
-.div-flexbox {
-    display: flex;
-}
-
-.h3-creatorrecepy {
-    padding-left: 30px;
-    padding-top: 45px;
-    font-size: 25px;
+    object-fit: contain;
 }
 
 .number_portion {
@@ -260,34 +245,80 @@ p {
     font-size: 27px;
 }
 
-@media(max-width:600px) {
-    .recepy, .img {
+@media(max-width:980px) {
+    .recepy-overview {
+        margin-top: 15vh;
+    }
+    h1 {
+        display: none;
+    }
+    h3 {
+        font-size: 3em;
+    }
+    h6 {
+        border-radius: 10px;
+        margin-left: 0;
+        font-size: 3em;
         width: 100%;
+        padding: 12px;
     }
-    .img-icon, .img-icon-recepylist {
-        width: 30px;
-        height: 30px;
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
     }
-    .btn-center {
-        display: block;
+    .recepy-flexbox {
+        justify-content: center;
     }
-    .btn-recepylist {
-        width: 50px;
+    .recepy {
+        background-color: rgba(224, 205, 116, 0.192);
+        width: 80%;
+        height: 75vh;
+        margin-bottom: 7vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        padding-top: 5vh;
+        padding-right: 5vh;
+        padding-bottom: 5vh;
+        padding-left: 5vh;
+    }
+    .img-icon {
+        display: flex;
+        align-items: center;
+        height: 5vh;
+        margin-right: 10vw;
+        margin-left: 5vw;
+        object-fit: contain;
+    }
+    .recepy-child {
+        display: flex;
+        align-items: center;
+    }
+    button {
+        position: revert !important;
+        width: 50vw;
+    }
+    .btn {
+        font-size: 3em;
     }
     .h1-recepylist {
-        font-size: 40px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vh;
     }
-
-
-    button{
-
-        width: 150px;
+    .img-recepylist {
+        height: 21vh;
     }
-
-
-    .div-number-ingridient{
-        width: 100%;
+    .div-preparation {
+        max-width: 100%;
     }
-
-    
 }

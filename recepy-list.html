@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kochwelt - Rezeptansicht</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
-    =======
-    <title>Kochwelt - Rezeptansicht</title>
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
-    >>>>>>> 721544fe3f6462fb7ade05c1182a99c83819abcf
     <link rel="stylesheet" type="text/css" href="css/style-recepy.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/recepy.js"></script>
     <script src="js/recepy-list.js"></script>
 </head>
 
 <body onload="loadRecepyList()">
 
-    <div class="navigation-bar">
+    <header class="navigation-bar">
+
 
         <img class="logo" src="img/logo.png">
 
@@ -33,48 +29,51 @@
             <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
         </nav>
 
+    </header>
 
-    </div>
+    <main>
 
+        <div class="recepy-overview">
 
-    <div class="recepy-overview">
+            <div class="addRecepy-List" id="addRecepy-List">
 
-        <div style="margin-top: 130px;" id="addRecepy-List">
-
-        </div>
-
-        <div id="div-ingridient" class="div-ingridient">
-
-        </div>
-
-
-        <hr class="hr-recepy">
-
-        <h3 class="h3-recepylist">Zubereitung</h3>
-
-        <div class="div-preparation" id="div-preparation">
-
-
-
-        </div>
-
-        <div id="div-creator"></div>
-
-
-        <footer class="footer">
-            <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
-            <div class="text-center">
-                <div style="padding: 8px;"> Social Media Link </div>
-                <div>
-                    <img class=" social-media-icon" src="img/facebook.png">
-                    <img class="social-media-icon" src="img/twitter.png">
-                    <img class="social-media-icon" src="img/instagram.png">
-                    <img class="social-media-icon" src="img/tiktok.png">
-                </div>
             </div>
 
-        </footer>
+            <div id="div-ingridient" class="div-ingridient">
+
+            </div>
+
+
+            <hr class="hr-recepy">
+
+            <h3 class="h3-recepylist">Zubereitung</h3>
+
+            <div class="div-preparation" id="div-preparation">
+
+
+
+            </div>
+
+            <div id="div-creator"> </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
+
+        <div class="text-center">
+
+            <div style="padding: 8px;"> Social Media Link </div>
+
+            <div>
+                <a href="https://www.facebook.com/"> <img class="social-media-icon" src="img/facebook.png"> </a>
+                <a href="https://twitter.com/"> <img class="social-media-icon" src="img/twitter.png"> </a>
+                <a href="https://www.instagram.com/"> <img class="social-media-icon" src="img/instagram.png"> </a>
+                <a href="https://www.tiktok.com/"> <img class="social-media-icon" src="img/tiktok.png"> </a>
+            </div>
+        </div>
+
+    </footer>
 
 </body>
-
-</html>

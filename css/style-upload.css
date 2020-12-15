@@ -45,3 +45,29 @@
     color: white;
     margin-bottom: 2rem;
 }
+
+@media(max-width:980px) {
+    h1 {
+        display: none;
+    }
+    .recipeform {
+        font-size: xx-large;
+        width: 76vw;
+    }
+    .recipeform label {
+        text-align: center;
+    }
+    label {
+        display: flex;
+        justify-content: center;
+    }
+    .recipeform fieldset {
+        text-align-last: center;
+    }
+    .recipeform input {
+        font-size: xx-large;
+    }
+    .recipeform select {
+        font-size: xx-large;
+    }
+}

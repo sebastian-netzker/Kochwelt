@@ -1,5 +1,5 @@
 const BASE_SERVER_URL =
-  "http://gruppe-49.developerakademie.com/dirk2/js/";
+  "http://gruppe-49.developerakademie.com/js/";
 
   let infoRecepy = [];
 
@@ -65,7 +65,7 @@ function createRecepyInfo(
   let RecepyInfo = `<div class="recepy">
      <img class="img" src =${picture_url}>
      <h3>${recepy_name}</h3>
-     <h6>${category}</h6>
+     <div class="h6-category"><h6>${category}</h6></div>
      <hr class="hr-recepy">
      <div class="recepy-child">
       <p><img class="img-icon" src="img/clock.png" >${preperation_time}</p>
@@ -145,9 +145,3 @@ function determineProxySettings() {
     return "https://cors-anywhere.herokuapp.com/";
   }
 }
-
-
-
-
-
-

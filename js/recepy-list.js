@@ -184,7 +184,7 @@ function createRecepyCreator(creator) {
 
    <div class="div-createrecepy">
 
-       <h3 class="h3-recepylist">Rezept erstellt von </h3>
+       <h3> Autor </h3>
 
       <div class="div-flexbox">
        <img class="img-profile" src="img/profile.png" alt="">
@@ -266,7 +266,7 @@ function createRecepyListInfo(
 ) {
   let RecepyListInfo = `<h1 class="h1-recepylist">${recepy_name}</h1>
     
-    <div> 
+    <div class="recepy-column"> 
 
     <img class="img-recepylist" src="${picture_url}" >
 

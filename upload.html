@@ -3,7 +3,6 @@
 <head>
     <title> Kochwelt - Rezept einreichen </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
@@ -46,9 +45,10 @@
                 <fieldset id="ingredients">
                     <label for="ingredients">Zutaten</label>
                     <fieldset id="ingredientsPrototype" name="ingredient">
-                        <input type="text" name="ingredientName" placeholder="Zutat" required>
-                        <input type="number" name="ingredientPortion" placeholder="Menge" required max="9999">
-                        <select name="ingredientUnit">
+                        <input type="text" name="ingredientName" id="ingredientName" placeholder="Zutat" required>
+                        <input type="number" name="ingredientPortion" id="ingredientPortion" placeholder="Menge"
+                            required max="9999">
+                        <select name="ingredientUnit" id="ingredientUnit">
                             <option value="">Maßeinheit</option>
                             <option></option>
                             <option>g</option>
@@ -61,17 +61,17 @@
                             <option>Prise</option>
                         </select>
                     </fieldset>
-                    <input type="button" value="Zutat hinzufügen"
+                    <input type="button" id="Add-Ingredient" value="Zutat hinzufügen"
                         onclick="createEntry('ingredients','ingredientsPrototype')">
-                    <input type="button" value="Zutat entfernen" onclick="removeEntry('ingredients')">
+                    <input type="button" id="Remove-Ingredient" value="Zutat entfernen" onclick="removeEntry('ingredients')">
                 </fieldset>
                 <fieldset id="preparations">
                     <label>Zubereitung</label>
                     <textarea name="preparation" rows="5" placeholder="Zubereitungsschritt" id="preparationPrototype"
                         required></textarea>
-                    <input type="button" value="Schritt hinzufügen"
+                    <input type="button" id="Add-Preparation" value="Schritt hinzufügen"
                         onclick="createEntry('preparations','preparationPrototype')">
-                    <input type="button" value="Schritt entfernen" onclick="removeEntry('preparations')">
+                    <input type="button" id="Remove-Preparation" value="Schritt entfernen" onclick="removeEntry('preparations')">
                 </fieldset>
                 <fieldset>
                     <label>Weitere Informationen</label>
@@ -115,14 +115,13 @@
             <div style="padding: 8px;"> Social Media Link </div>
 
             <div>
-                <img class=" social-media-icon" src="img/facebook.png">
-                <img class="social-media-icon" src="img/twitter.png">
-                <img class="social-media-icon" src="img/instagram.png">
-                <img class="social-media-icon" src="img/tiktok.png">
+                <a href="https://www.facebook.com/"> <img class="social-media-icon" src="img/facebook.png"> </a>
+                <a href="https://twitter.com/"> <img class="social-media-icon" src="img/twitter.png"> </a>
+                <a href="https://www.instagram.com/"> <img class="social-media-icon" src="img/instagram.png"> </a>
+                <a href="https://www.tiktok.com/"> <img class="social-media-icon" src="img/tiktok.png"> </a>
             </div>
         </div>
 
     </footer>
-</body>
 
-</html>
+</body>
