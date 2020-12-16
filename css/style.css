@@ -227,5 +227,6 @@ input[id="text"]::-webkit-input-placeholder {
         padding-bottom: 5px;
         padding-right: 10px;
         padding-left: 10px;
+        text-decoration: none;
     }
 }
