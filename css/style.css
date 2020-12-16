@@ -191,3 +191,41 @@ input[id="text"]::-webkit-input-placeholder {
     flex-direction: column;
     margin-right: 32px;
 }
+
+.navigation-button-mobile {
+    display: none;
+}
+
+.navigation-menu-mobile {
+    display: none;
+}
+
+@media only screen and (max-device-width: 768px) {
+    .navigation-menu {
+        display: none;
+    }
+    .navigation-button-mobile {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+    }
+    .navigation-menu-mobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5vw;
+        width: 50vw;
+        z-index: 1;
+        background-color: green;
+        border-radius: 3px;
+    }
+    .navigation-menu-mobile a{
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

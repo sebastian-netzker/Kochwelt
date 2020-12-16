@@ -2,12 +2,15 @@
 
 <head>
     <title> Kochwelt </title>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/recepy.js"></script>
+    <script type="text/javascript" src="js/kochwelt.js"></script>
     <script type="text/javascript">
         function ShowList() {
             var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
@@ -76,15 +79,27 @@
 
         <img class="logo" src="img/logo.png">
 
-        <nav class="navigation-menu">
+        <nav>
+            <div class="navigation-menu">
 
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>
+                <a href="index.html"> Start </a>&nbsp; | &nbsp;
+                <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+                <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+                <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+                <a href="imprint.html"> Impressum </a>
+            </div>
+            <div class="navigation-button-mobile">
+                <a href="#" onclick="toggleMobileMenu()"><img src="img/burger.svg" alt=""></a>
+            </div>
+            <div class="navigation-menu-mobile" id="mobileMenu">
+                <a href="index.html"> Start </a>
+                <a href="recepy.html"> Rezept des Tages</a>
+                <a href="upload.html"> Upload </a>
+                <a href="contact.html"> Kontakt </a>
+                <a href="imprint.html"> Impressum </a>
+            </div>
+
         </nav>
-
     </header>
 
     <main>
@@ -96,9 +111,10 @@
             </div>
 
             <div class="search-box">
-            	<input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen" onkeyup="ShowList()">
+                <input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen"
+                    onkeyup="ShowList()">
                 <span class="search-btn text-center"> <img style="width: 24px;" src="img/search-solid.svg"> </span>
-                
+
             </div>
             <div id="search-list"></div>
             <div class="headline-slide-show">

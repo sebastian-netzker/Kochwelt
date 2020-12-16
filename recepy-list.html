@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-
     <title>Kochwelt - Rezeptansicht</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
@@ -15,25 +13,38 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/recepy.js"></script>
     <script src="js/recepy-list.js"></script>
+    <script type="text/javascript" src="js/kochwelt.js"></script>
 </head>
 
 <body onload="loadRecepyList()">
 
-    <div class="navigation-bar">
+    <header class="navigation-bar">
+
 
         <img class="logo" src="img/logo.png">
 
-        <nav class="navigation-menu">
+        <nav>
+            <div class="navigation-menu">
 
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+                <a href="index.html"> Start </a>&nbsp; | &nbsp;
+                <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+                <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+                <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+                <a href="imprint.html"> Impressum </a>
+            </div>
+            <div class="navigation-button-mobile">
+                <a href="#" onclick="toggleMobileMenu()"><img src="img/burger.svg" alt=""></a>
+            </div>
+            <div class="navigation-menu-mobile" id="mobileMenu">
+                <a href="index.html"> Start </a>
+                <a href="recepy.html"> Rezept des Tages</a>
+                <a href="upload.html"> Upload </a>
+                <a href="contact.html"> Kontakt </a>
+                <a href="imprint.html"> Impressum </a>
+            </div>
+
         </nav>
-
-
-    </div>
+    </header>
 
 
      <div style="margin-top: 130px;" id="addRecepy-List"></div>

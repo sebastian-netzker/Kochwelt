@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!--link rel="stylesheet" href="css/form.css"-->
     <link rel="stylesheet" type="text/css" href="css/style-upload.css">
+    <script type="text/javascript" src="js/kochwelt.js"></script>
+
 </head>
 
 <body>
@@ -19,15 +21,27 @@
 
         <img class="logo" src="img/logo.png">
 
-        <nav class="navigation-menu">
+        <nav>
+            <div class="navigation-menu">
 
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+                <a href="index.html"> Start </a>&nbsp; | &nbsp;
+                <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
+                <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
+                <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
+                <a href="imprint.html"> Impressum </a>
+            </div>
+            <div class="navigation-button-mobile">
+                <a href="#" onclick="toggleMobileMenu()"><img src="img/burger.svg" alt=""></a>
+            </div>
+            <div class="navigation-menu-mobile" id="mobileMenu">
+                <a href="index.html"> Start </a>
+                <a href="recepy.html"> Rezept des Tages</a>
+                <a href="upload.html"> Upload </a>
+                <a href="contact.html"> Kontakt </a>
+                <a href="imprint.html"> Impressum </a>
+            </div>
+
         </nav>
-
     </header>
 
     <main>
