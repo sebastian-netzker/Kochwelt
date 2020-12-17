@@ -8,122 +8,39 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/recepy.js"></script>
-    <script type="text/javascript">
-        function ShowList() {
-            var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
-
-            searchdiv = document.getElementById("search-list");
-            input = document.getElementById("text");
-            filter = input.value.toUpperCase();
-            len = input.value.length;
-            if (len > 2) {
-                loadJSONFromServer()
-                    .then(function (result) {
-                        //then(function (variable vom server))
-                        //console.log("Laden erfolgreich!", result);
-                        my_recepy = JSON.parse(result);
-                        //console.log(my_recepy);
-                        searchdiv.innerHTML = ""
-                        for (var i = 0; i < my_recepy.length; i++) {
-                            if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
-                                searchdiv.innerHTML += '<a href="recepy-list.html?recepy=' + i + '">' + my_recepy[i].recepy + '</a>';
-                            }
-                        }
-                    })
-                    .catch(function (error) {
-                        // Fehler
-                        console.error("Fehler beim laden!", error);
-                    });
-
-            } else {
-                searchdiv.innerHTML = "";
-            }
-            return;
-        }
-    </script>
-    <style type="text/css">
-        #search-list {
-            position: absolute;
-            top: 30%;
-            left: 0;
-            margin: auto;
-            right: 0;
-            text-align: center;
-            z-index: 1;
-            background-color: rgb(92, 153, 100);
-            min-width: 300px;
-            max-width: 40vw;
-        }
-
-        #search-list a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        #search-list a:hover {
-            background-color: green;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-<body>
+<body onload="getRecepyList()">
 
     <header class="navigation-bar">
-
-
         <img class="logo" src="img/logo.png">
-
         <nav class="navigation-menu">
-
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>
+            <a href="index.html">Start</a>&nbsp; | &nbsp;
+            <a href="recepy.html">Rezept des Tages</a>&nbsp; | &nbsp; 
+            <a href="upload.html">Upload</a>&nbsp; | &nbsp;
+            <a href="contact.html">Kontakt</a>&nbsp; | &nbsp;
+            <a href="imprint.html">Impressum</a>
         </nav>
-
+        <a class="icon" href="javascript:void(0);" style="font-size:15px;" onclick="setResponsitive()">&#9776;</a>
+        <div class="res response" id="res">
+            <a href="index.html">Start</a>
+            <a href="recepy.html">Rezept des Tages</a>
+            <a href="upload.html">Upload</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="imprint.html">Impressum</a>
+        </div>
     </header>
 
     <main>
-        <div class="search-container text-center">
-            <h2> <b> Was koche ich heute? </b> </h2>
-        </div>
 
-        <div class="search-box">
-            <input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen">
-            <a href="#" class="search-btn text-center"> <img class="btn-img" src="img/search-solid.svg"> </a>
+        <section>
 
-<<<<<<< HEAD
-        </div>
+            <div class="search-container text-center">
+                <h2> <b> Was koche ich heute? </b> </h2>
+            </div>
 
-        <div class="headline-slide-show">
-            <h2> <b> Lust auf was neues?</b> </h2>
-        </div>
-
-        <div class="slide-show">
-            <div class="slide-bar">
-                <div> <img src="img/croissant.jpg"> </div>
-                <div> <img src="img/pho.jpg"> </div>
-                <div> <img src="img/salad.jpg"> </div>
-                <div> <img src="img/steak.jpg"></div>
-                <div> <img src="img/wok.jpg"> </div>
-                <div> <img src="img/almond_cookie.jpg"> </div>
-                <div> <img src="img/beetroot_sweetpotato.jpg"> </div>
-                <div> <img src="img/chicken_curry.jpg"> </div>
-                <div> <img src="img/cinnamon_cookie.jpg"> </div>
-                <div> <img src="img/cream_cake.jpg"> </div>
-                <div> <img src="img/omelette.jpg"> </div>
-                <div> <img src="img/pizza.jpg"> </div>
-                <div> <img src="img/potato_gratin.jpg"> </div>
-                <div> <img src="img/potato_soup.jpg"> </div>
-                <div> <img src="img/scheepcheese_sweetpotato.jpg"> </div>
-                <div> <img src="img/sushi.jpg"> </div>
-=======
             <div class="search-box">
-            	<input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen" onkeyup="ShowList()">
+                <input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen" onkeyup="showSearchList()">
                 <span class="search-btn text-center"> <img style="width: 24px;" src="img/search-solid.svg"> </span>
                 
             </div>
@@ -131,12 +48,14 @@
             <div class="headline-slide-show">
                 <h2> <b> Lust auf was neues?</b> </h2>
             </div>
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
 
+            <div class="slide-show">
+                <div class="slide-bar" id="slide-bar"></div>
 
             </div>
 
-        </div>
+        </section>
+
 
     </main>
 

@@ -2,40 +2,61 @@
 <html lang="de">
 <head>
 	<title>Kochwelt - Deine Nachricht</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/start.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	</head>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/recepy.js"></script>
+</head>
 <body>
 
-    <div class="navigation-bar">
-
+    <header class="navigation-bar">
         <img class="logo" src="img/logo.png">
-
         <nav class="navigation-menu">
-
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+            <a href="index.html">Start</a>&nbsp; | &nbsp;
+            <a href="recepy.html">Rezept des Tages</a>&nbsp; | &nbsp; 
+            <a href="upload.html">Upload</a>&nbsp; | &nbsp;
+            <a href="contact.html">Kontakt</a>&nbsp; | &nbsp;
+            <a href="imprint.html">Impressum</a>
         </nav>
-        
-
-    </div>
-
-		<div class="wrapper">
-        <div class="hauptcontainer">
-            <h1>E-Mail wurde gesendet!</h1>
+        <a class="icon" href="javascript:void(0);" style="font-size:15px;" onclick="setResponsitive()">&#9776;</a>
+        <div class="res response" id="res">
+            <a href="index.html">Start</a>
+            <a href="recepy.html">Rezept des Tages</a>
+            <a href="upload.html">Upload</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="imprint.html">Impressum</a>
         </div>
-		<div class="footer">
-			<div>© Copyright 2020 - Kochwelt - Gruppe 49 from developerakademie</div>
-			<a href="imprint.html">Impressum</a><a href="">Datenschutz</a>
-			</div>
-		</div>
+    </header>
+
+    <main>
+
+
+
+            <h1 class="search-container text-center">Ihre E-Mail wurde gesendet</h1>
+
+
+
+
+    </main>
+
+    <footer class="footer">
+
+        <div style="margin-left: 32px;"> © 2020 Kochwelt </div>
+
+        <div class="text-center">
+
+            <div style="padding: 8px;"> Social Media Link </div>
+
+            <div>
+                <a href="https://www.facebook.com/"> <img class="social-media-icon" src="img/facebook.png"> </a>
+                <a href="https://twitter.com/"> <img class="social-media-icon" src="img/twitter.png"> </a>
+                <a href="https://www.instagram.com/"> <img class="social-media-icon" src="img/instagram.png"> </a>
+                <a href="https://www.tiktok.com/"> <img class="social-media-icon" src="img/tiktok.png"> </a>
+            </div>
+        </div>
+
+    </footer>
 	</body>
 </html>

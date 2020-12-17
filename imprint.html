@@ -7,29 +7,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/form.css">
+    <script src="js/recepy.js"></script>
 </head>
 
 <body>
-
     <header class="navigation-bar">
-
-
         <img class="logo" src="img/logo.png">
-
         <nav class="navigation-menu">
-
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+            <a href="index.html">Start</a>&nbsp; | &nbsp;
+            <a href="recepy.html">Rezept des Tages</a>&nbsp; | &nbsp; 
+            <a href="upload.html">Upload</a>&nbsp; | &nbsp;
+            <a href="contact.html">Kontakt</a>&nbsp; | &nbsp;
+            <a href="imprint.html">Impressum</a>
         </nav>
-
+        <a class="icon" href="javascript:void(0);" style="font-size:15px;" onclick="setResponsitive()">&#9776;</a>
+        <div class="res response" id="res">
+            <a href="index.html">Start</a>
+            <a href="recepy.html">Rezept des Tages</a>
+            <a href="upload.html">Upload</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="imprint.html">Impressum</a>
+        </div>
     </header>
 
     <main>
-
+<div class="contact">
         <div class="impressum">
             <h1>Impressum</h1>
             <p>
@@ -441,7 +443,8 @@
                 (&bdquo;Gef&auml;llt mir&ldquo;) auf dieser Website. Eine &Uuml;bersicht &uuml;ber die Facebook
                 Plugins
                 finden Sie hier: <a href="https://developers.facebook.com/docs/plugins/?locale=de_DE" target="_blank"
-                    rel="noopener noreferrer">https://developers.facebook.com/docs/plugins/?locale=de_DE</a>.</p>
+                    rel="noopener noreferrer"> https://developers.facebook.com/ docs/plugins/?locale=de_DE</a>.
+                </p>
             <p>Wenn Sie diese Website besuchen, wird &uuml;ber das Plugin eine direkte Verbindung zwischen Ihrem
                 Browser
                 und
@@ -459,7 +462,7 @@
                 Nutzung durch Facebook erhalten. Weitere Informationen hierzu finden Sie in der
                 Datenschutzerkl&auml;rung
                 von Facebook unter: <a href="https://de-de.facebook.com/privacy/explanation" target="_blank"
-                    rel="noopener noreferrer">https://de-de.facebook.com/privacy/explanation</a>.</p>
+                    rel="noopener noreferrer"> https://de-de.facebook.com/ privacy/explanation</a>.</p>
             <p>Wenn Sie nicht w&uuml;nschen, dass Facebook den Besuch dieser Website Ihrem Facebook-Nutzerkonto
                 zuordnen
                 kann, loggen Sie sich bitte aus Ihrem Facebook-Benutzerkonto aus.</p>
@@ -474,9 +477,9 @@
                 gest&uuml;tzt.
                 Details finden Sie hier: <a href="https://www.facebook.com/legal/EU_data_transfer_addendum"
                     target="_blank"
-                    rel="noopener noreferrer">https://www.facebook.com/legal/EU_data_transfer_addendum</a> und <a
+                    rel="noopener noreferrer">https://www.facebook.com/ legal/EU_data_transfer_addendum</a> und <a
                     href="https://de-de.facebook.com/help/566994660333381" target="_blank"
-                    rel="noopener noreferrer">https://de-de.facebook.com/help/566994660333381</a>.</p>
+                    rel="noopener noreferrer">https://de-de.facebook.com/ help/566994660333381</a>.</p>
         </div>
 
         <div class="impressum">
@@ -543,14 +546,14 @@
                 gest&uuml;tzt.
                 Details finden Sie hier: <a href="https://www.facebook.com/legal/EU_data_transfer_addendum"
                     target="_blank"
-                    rel="noopener noreferrer">https://www.facebook.com/legal/EU_data_transfer_addendum</a>, <a
+                    rel="noopener noreferrer">https://www.facebook.com/ legal/EU_data_transfer_addendum</a>, <a
                     href="https://help.instagram.com/519522125107875" target="_blank"
-                    rel="noopener noreferrer">https://help.instagram.com/519522125107875</a> und <a
+                    rel="noopener noreferrer">https://help.instagram.com/ 519522125107875</a> und <a
                     href="https://de-de.facebook.com/help/566994660333381" target="_blank"
-                    rel="noopener noreferrer">https://de-de.facebook.com/help/566994660333381</a>.</p>
+                    rel="noopener noreferrer">https://de-de.facebook.com/ help/566994660333381</a>.</p>
             <p>Weitere Informationen hierzu finden Sie in der Datenschutzerkl&auml;rung von Instagram: <a
                     href="https://instagram.com/about/legal/privacy/" target="_blank"
-                    rel="noopener noreferrer">https://instagram.com/about/legal/privacy/</a>.</p>
+                    rel="noopener noreferrer">https://instagram.com/ legal/privacy/</a>.</p>
         </div>
 
         <div class="impressum">
@@ -621,16 +624,15 @@
         </div>
 
         <div class="impressum">
-            Icon die ich (Sebastian) verwendet habe:
-            The icon from "https://https://www.iconsdb.com/guacamole-green-icons/clock-icon.html" is provided by icons8
+            The icon from "https://https://www.iconsdb.com/ guacamole-green-icons/clock-icon.html" is provided by icons8
             as creative Commons Attributon-NoDerivs 3.0.
-            The icon from "https://https://www.iconsdb.com/guacamole-green-icons/euro-icon.html" is provided as CC0 1.0
+            The icon from "https://https://www.iconsdb.com/ guacamole-green-icons/euro-icon.html" is provided as CC0 1.0
             Universal (CC0 1.0) Public Domain Dedication.
-            The icon from https://www.flaticon.com/free-icon/calories-calculator_2316952?term=calories&page=1&position=26 made by <a
+            The icon from https://www.flaticon.com/free-icon/ calories-calculator_2316952?term=calories &page=1&position=26 made by <a
                 href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a
                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             The icon from
-            "https://www.flaticon.com/free-icon/levels_211915?term=level%20green&page=1&position=8&related_item_id=211915"
+            "https://www.flaticon.com/free-icon/levels_211915? term=level%20green&page=1 &position=8&related_item_id=211915"
             made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
         </div>
@@ -640,6 +642,8 @@
                 href="https://www.kanzlei-hasselbach.de/standorte/bonn/">Kanzlei Hasselbach, Bonn</a>
 
         </div>
+</div>
+
     </main>
 
     <footer class="footer">

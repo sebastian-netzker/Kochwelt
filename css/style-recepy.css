@@ -104,13 +104,11 @@ footer a:hover {
     margin-top: 30px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 30px;
 }
 
 .recepy-child {
     display: flex;
     justify-content: space-between;
-    text-align: center;
 }
 
 .recepy-flexbox {
@@ -129,8 +127,7 @@ h6 {
     background-color: rgba(74, 184, 30, 0.74);
     width: 45%;
     text-align: center;
-    display: table;
-    margin: auto;
+    margin-left: 145px;
 }
 
 button {
@@ -173,16 +170,6 @@ p {
     background-color: rgba(224, 205, 116, 0.192);
 }
 
-<<<<<<< HEAD
-=======
-.h1-recepylist {
-    color: black;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 50px;
-}
-
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
 .h3-recepylist {
     font-size: 30px;
 }
@@ -201,13 +188,8 @@ p {
 
 .div-number-ingridient {
     display: flex;
-<<<<<<< HEAD
     align-items: center;
     justify-content: center;
-=======
-    padding-left: 90px;
-    text-align: center;
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
 }
 
 .btn-recepylist {
@@ -252,14 +234,6 @@ p {
     padding-left: 70px;
 }
 
-<<<<<<< HEAD
-=======
-.div-createrecepy {
-    padding-top: 20px;
-    padding-bottom: 40px;
-}
-
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
 .img-profile {
     width: 225px;
     height: 150px;
@@ -271,7 +245,6 @@ p {
     font-size: 27px;
 }
 
-<<<<<<< HEAD
 @media(max-width:980px) {
     .recepy-overview {
         margin-top: 15vh;
@@ -324,46 +297,14 @@ p {
         margin-right: 10vw;
         margin-left: 5vw;
         object-fit: contain;
-=======
-h1 {
-    padding-top: 140px;
-    text-align: center;
-}
-
-.h6-category {
-    text-align: center;
-}
-
-.div-number-ingridient-child {
-
-
-    display: flex;
-    flex-direction: column;
-    
-}
-
-
-
-
-@media(max-width:600px) {
-    .recepy, .img {
-        width: 100%;
-        display: table;
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
     }
     .recepy-child {
         display: flex;
         align-items: center;
     }
-<<<<<<< HEAD
     button {
         position: revert !important;
         width: 50vw;
-=======
-    .btn-center {
-        display: block;
-        text-align: center;
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
     }
     .btn {
         font-size: 3em;
@@ -374,46 +315,10 @@ h1 {
         align-items: center;
         margin-top: 2vh;
     }
-<<<<<<< HEAD
     .img-recepylist {
         height: 21vh;
     }
     .div-preparation {
         max-width: 100%;
-=======
-    button {
-        width: 150px;
-        left: inherit;
-    }
-    .div-number-ingridient {
-        padding-left: inherit;
-        margin: auto;
-        width: 50%;
-    }
-    .h3-creatorrecepy {
-        padding-left: 10px;
-    }
-    .img-profile {
-        padding-left: 0px;
-        margin-left: 50px;
-        margin-right: 30px;
-        height: 120px;
-        width: 120px;
-        object-fit: cover;
-        border: 20px black;
-    }
-    .recepylist-child {
-        display: inherit;
-        padding-left: 35px;
-        padding-right: 20px;
-    }
-    .p-recepylist {
-        width: 95%;
-        text-align: center;
-    }
-    .p-number-ingridient1 {
-        padding-left: inherit;
-        text-align: center;
->>>>>>> 3a15e13851e6b63667476d22ada0a3087d7c31e8
     }
 }

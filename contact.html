@@ -7,27 +7,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!--link rel="stylesheet" href="css/form.css"-->
     <link rel="stylesheet" type="text/css" href="css/style-upload.css">
+    <script src="js/recepy.js"></script>
 </head>
 
 <body>
 
     <header class="navigation-bar">
-
-
         <img class="logo" src="img/logo.png">
-
         <nav class="navigation-menu">
-
-            <a href="index.html"> Start </a>&nbsp; | &nbsp;
-            <a href="recepy.html"> Rezept des Tages</a>&nbsp; | &nbsp;
-            <a href="upload.html"> Upload </a>&nbsp; | &nbsp;
-            <a href="contact.html"> Kontakt </a>&nbsp; | &nbsp;
-            <a href="imprint.html"> Impressum </a>&nbsp; | &nbsp;
+            <a href="index.html">Start</a>&nbsp; | &nbsp;
+            <a href="recepy.html">Rezept des Tages</a>&nbsp; | &nbsp; 
+            <a href="upload.html">Upload</a>&nbsp; | &nbsp;
+            <a href="contact.html">Kontakt</a>&nbsp; | &nbsp;
+            <a href="imprint.html">Impressum</a>
         </nav>
-
+        <a class="icon" href="javascript:void(0);" style="font-size:15px;" onclick="setResponsitive()">&#9776;</a>
+        <div class="res response" id="res">
+            <a href="index.html">Start</a>
+            <a href="recepy.html">Rezept des Tages</a>
+            <a href="upload.html">Upload</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="imprint.html">Impressum</a>
+        </div>
     </header>
+
 
     <main>
 
@@ -35,10 +39,9 @@
 
             <h1>Kontaktformular</h1>
 
-
             <form class="recipeform" method="POST" action="http://gruppe-49.developerakademie.com/send_mail/send_mail.php">
                 <input placeholder="Dein Name" name="name">
-                <textarea placeholder="Deine Nachricht" name="message" style="height: 300px;"></textarea>
+                <textarea placeholder="Deine Nachricht" name="message" style="height:300px"></textarea>
                 <input class="submit" type="submit">
             </form>
         </div>
