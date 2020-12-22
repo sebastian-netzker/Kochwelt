@@ -22,7 +22,7 @@ main {
     right: 0;
     left: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 8px;
 }
 
@@ -30,6 +30,7 @@ main {
     display: flex;
     align-items: center;
     padding-top: 20px;
+    padding-right: 20px;
 }
 
 .navigation-menu a {
@@ -45,6 +46,12 @@ main {
     transition: all 225ms ease-in-out;
     border-bottom: 4px solid rgb(57, 146, 43);
     font-weight: bold;
+}
+
+.logo {
+    top: -10px;
+    position: absolute;
+    left: 30px;
 }
 
 .search-container {
@@ -123,7 +130,7 @@ input[id="text"]::-webkit-input-placeholder {
 .slide-show {
     overflow: hidden;
     position: absolute;
-    top: 62%;
+    top: 60%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
@@ -183,11 +190,19 @@ input[id="text"]::-webkit-input-placeholder {
     background-color: rgb(64, 59, 59);
     color: white;
     font-size: 18px;
+    padding: 5px;
 }
 
 .social-media-icon {
-    width: 20%;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+
+
 
 .text-center {
     text-align: center;
@@ -203,6 +218,46 @@ input[id="text"]::-webkit-input-placeholder {
     display: none;
 }
 
+@media(max-width:1010px) {
+    .slide-show {
+        top: 60%;
+        height: 200px;
+    }
+}
+
+@media (max-width:850px) {
+    .navigation-menu {
+        display: none;
+    }
+    .navigation-button-mobile {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    .navigation-menu-mobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5vw;
+        width: 50vw;
+        z-index: 1;
+        background-color: green;
+        border-radius: 3px;
+    }
+    .navigation-menu-mobile a {
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-decoration: none;
+    }
+    .navigation-menu-mobile a:hover {
+        background: rgba(62, 173, 62, 0.411);
+    }
+}
 
 @media only screen and (max-device-width: 768px) {
     .navigation-menu {
@@ -211,7 +266,7 @@ input[id="text"]::-webkit-input-placeholder {
     .navigation-button-mobile {
         display: block;
         position: absolute;
-        top: 50px;
+        top: 30px;
         right: 10px;
     }
     .navigation-menu-mobile {
