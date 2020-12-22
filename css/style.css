@@ -29,6 +29,7 @@ main {
 .navigation-menu {
     display: flex;
     align-items: center;
+    padding-top: 20px;
 }
 
 .navigation-menu a {
