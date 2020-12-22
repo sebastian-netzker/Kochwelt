@@ -149,5 +149,69 @@ function determineProxySettings() {
 
 
 
+var my_recepy;
+function showSearchList() {
+  var input, filter, len, searchdiv;
 
+  searchdiv = document.getElementById("search-list");
+  input = document.getElementById("text");
+  filter = input.value.toUpperCase();
+  len = input.value.length;
+  if (len > 1) {
+    //loadJSONFromServer()
+    //  .then(function (result) {
+    //    my_recepy = JSON.parse(result);
+    searchdiv.innerHTML = "";
+    for (var i = 0; i < my_recepy.length; i++) {
+      if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
+        searchdiv.innerHTML +=
+          '<a href="recepy-list.html?recepy=' +
+          i +
+          '">' +
+          my_recepy[i].recepy +
+          "</a>";
+      }
+    }
+    //      })
+    //    .catch(function (error) {
+    //      console.error("Fehler beim laden(searchdiv):", error);
+    //    });
+  } else {
+    searchdiv.innerHTML = "";
+  }
+  return;
+}
 
+function showRecepy(recepy) {
+  window.location.href = "./recepy-list.html?recepy=" + recepy;
+}
+function getRecepyList() {
+  var slidediv = document.getElementById("slide-bar");
+  loadJSONFromServer()
+    .then(function (result) {
+      my_recepy = JSON.parse(result);
+      slidediv.innerHTML = "";
+      for (var i = 0; i < my_recepy.length; i++) {
+        slidediv.innerHTML +=
+          '<div> <img class="slide-img" src="' +
+          my_recepy[i].image +
+          '" onclick="showRecepy(' +
+          i +
+          ')"> </div>';
+      }
+    })
+    .catch(function (error) {
+      // Fehler
+      console.error("Fehler beim laden!", error);
+      slidediv.innerHTML = "";
+    });
+  return;
+}
+function setResponsitive() {
+  var x = document.getElementById("res");
+  if (x.className === "res") {
+    x.className = "res response";
+  } else {
+    x.className = "res";
+  }
+}

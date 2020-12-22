@@ -11,39 +11,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/recepy.js"></script>
     <script type="text/javascript" src="js/kochwelt.js"></script>
-    <script type="text/javascript">
-        function ShowList() {
-            var input, filter, len, searchdiv, my_recepy, ul, li, a, i;
-
-            searchdiv = document.getElementById("search-list");
-            input = document.getElementById("text");
-            filter = input.value.toUpperCase();
-            len = input.value.length;
-            if (len > 2) {
-                loadJSONFromServer()
-                    .then(function (result) {
-                        //then(function (variable vom server))
-                        //console.log("Laden erfolgreich!", result);
-                        my_recepy = JSON.parse(result);
-                        //console.log(my_recepy);
-                        searchdiv.innerHTML = ""
-                        for (var i = 0; i < my_recepy.length; i++) {
-                            if (my_recepy[i].recepy.toUpperCase().indexOf(filter) > -1) {
-                                searchdiv.innerHTML += '<a href="recepy-list.html?recepy=' + i + '">' + my_recepy[i].recepy + '</a>';
-                            }
-                        }
-                    })
-                    .catch(function (error) {
-                        // Fehler
-                        console.error("Fehler beim laden!", error);
-                    });
-
-            } else {
-                searchdiv.innerHTML = "";
-            }
-            return;
-        }
-    </script>
+   
+          
     <style type="text/css">
         #search-list {
             position: absolute;
@@ -73,7 +42,7 @@
     </style>
 </head>
 
-<body>
+<body onload="getRecepyList()" >
 
     <header class="navigation-bar">
 
@@ -113,7 +82,7 @@
 
             <div class="search-box">
                 <input class="search-input text-center" id="text" type="text" placeholder="Rezept suchen"
-                    onkeyup="ShowList()">
+                    onkeyup="showSearchList()">
                 <span class="search-btn text-center"> <img style="width: 24px;" src="img/search-solid.svg"> </span>
 
             </div>
@@ -123,24 +92,8 @@
             </div>
 
             <div class="slide-show">
-                <div class="slide-bar">
-                    <div> <img src="img/croissant.jpg"> </div>
-                    <div> <img src="img/pho.jpg"> </div>
-                    <div> <img src="img/salad.jpg"> </div>
-                    <div> <img src="img/steak.jpg"></div>
-                    <div> <img src="img/wok.jpg"> </div>
-                    <div> <img src="img/almond_cookie.jpg"> </div>
-                    <div> <img src="img/beetroot_sweetpotato.jpg"> </div>
-                    <div> <img src="img/chicken_curry.jpg"> </div>
-                    <div> <img src="img/cinnamon_cookie.jpg"> </div>
-                    <div> <img src="img/cream_cake.jpg"> </div>
-                    <div> <img src="img/omelette.jpg"> </div>
-                    <div> <img src="img/pizza.jpg"> </div>
-                    <div> <img src="img/potato_gratin.jpg"> </div>
-                    <div> <img src="img/potato_soup.jpg"> </div>
-                    <div> <img src="img/scheepcheese_sweetpotato.jpg"> </div>
-                    <div> <img src="img/sushi.jpg"> </div>
-
+                <div id="slide-bar" class="slide-bar">
+                    
 
                 </div>
 
