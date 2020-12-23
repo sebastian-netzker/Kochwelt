@@ -1,20 +1,52 @@
 <html>
 
 <head>
-    <title> Kochwelt - Impressum </title>
+    <title> Kochwelt </title>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="css/form.css">
+    <script type="text/javascript" src="js/recepy.js"></script>
     <script type="text/javascript" src="js/kochwelt.js"></script>
-    
+   
+          
+    <style type="text/css">
+        #search-list {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            margin: auto;
+            right: 0;
+            text-align: center;
+            z-index: 1;
+            background-color: rgb(92, 153, 100);
+            min-width: 300px;
+            max-width: 40vw;
+            border-radius: 40px;
+        }
+
+        #search-list a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-list a:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
+<body onload="getRecepyList()" >
+        
 <header class="navigation-bar">
     <a href="index.html"><img class="logo" src="img/logo.png"></a>
     <nav>
@@ -41,40 +73,8 @@
 </header>
 
     <main>
-        <div class="contact">
 
-            <h1>Impressum</h1>
-            <p>
-                <strong>Angaben gemäß § 5 TMG</strong><br><br>
-                Gruppe 49 developerakademie<br>
-                Burgundertsr. 17.<br>
-                55270 Zornheim<br><br>
-                <strong>Vertreten durch:</strong><br><br>
-                Anton Sander<br><br>
-                <strong>Kontakt:</strong><br><br>
-                Telefon: 0176 38107533<br>
-                E-Mail: <a href='mailto:developerakademie@sander.kz'>developerakademie@sander.kz</a><br><br>
-                <strong>Haftungsausschluss:</strong><br><br>
-                <strong>Haftung für Inhalte</strong><br><br>
-                Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
-                und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß
-                § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§
-                8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte
-                fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
-                hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
-                allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
-                Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden
-                Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br>
-                <strong>Haftung für Links</strong><br><br>
-                Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
-                Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
-                verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die
-                verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
-                Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche
-                Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
-                zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
-                entfernen.<br><br>
-
+            <div class="contact">
                 <h1>Datenschutz&shy;erkl&auml;rung</h1>
                 <h2>1. Datenschutz auf einen Blick</h2>
                 <h3>Allgemeine Hinweise</h3>
@@ -127,6 +127,9 @@
                     zu.</p>
                 <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.
                 </p>
+            </div>
+
+            <div>
                 <h2>2. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
                 <h3>Datenschutz</h3>
                 <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln
@@ -280,7 +283,9 @@
                     nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen
                     Interesses
                     der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+            </div>
 
+            <div>
                 <h2>3. Datenerfassung auf dieser Website</h2>
                 <h3>Cookies</h3>
                 <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Textdateien
@@ -403,11 +408,15 @@
                     Zwingende
                     gesetzliche Bestimmungen &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben
                     unber&uuml;hrt.</p>
+            </div>
+
+            <div>
 
                 <h2>4. Soziale Medien</h2>
                 <h3>Social-Media-Plugins mit Shariff</h3>
                 <p>Auf dieser Website werden Plugins von sozialen Medien verwendet (z.&nbsp;B. Facebook, Twitter,
-                    Instagram, Pinterest, XING, LinkedIn, Tumblr).</p>
+                    Instagram,
+                    Pinterest, XING, LinkedIn, Tumblr).</p>
                 <p>Die Plugins k&ouml;nnen Sie in der Regel anhand der jeweiligen Social-Media-Logos erkennen. Um den
                     Datenschutz auf dieser Website zu gew&auml;hrleisten, verwenden wir diese Plugins nur zusammen mit
                     der
@@ -437,9 +446,9 @@
                 <p>Die Facebook Plugins erkennen Sie an dem Facebook-Logo oder dem &bdquo;Like-Button&ldquo;
                     (&bdquo;Gef&auml;llt mir&ldquo;) auf dieser Website. Eine &Uuml;bersicht &uuml;ber die Facebook
                     Plugins
-                    finden Sie : <a href="https://developers.facebook.com/docs/plugins/?locale=de_DE"
+                    finden Sie hier: <a href="https://developers.facebook.com/docs/plugins/?locale=de_DE"
                         target="_blank"
-                        rel="noopener noreferrer">hier</a>.</p>
+                        rel="noopener noreferrer">https://developers.facebook.com/docs/plugins/?locale=de_DE</a>.</p>
                 <p>Wenn Sie diese Website besuchen, wird &uuml;ber das Plugin eine direkte Verbindung zwischen Ihrem
                     Browser
                     und
@@ -456,8 +465,8 @@
                     deren
                     Nutzung durch Facebook erhalten. Weitere Informationen hierzu finden Sie in der
                     Datenschutzerkl&auml;rung
-                    von Facebook <a href="https://de-de.facebook.com/privacy/explanation" target="_blank"
-                        rel="noopener noreferrer">hier</a>.</p>
+                    von Facebook unter: <a href="https://de-de.facebook.com/privacy/explanation" target="_blank"
+                        rel="noopener noreferrer">https://de-de.facebook.com/privacy/explanation</a>.</p>
                 <p>Wenn Sie nicht w&uuml;nschen, dass Facebook den Besuch dieser Website Ihrem Facebook-Nutzerkonto
                     zuordnen
                     kann, loggen Sie sich bitte aus Ihrem Facebook-Benutzerkonto aus.</p>
@@ -580,56 +589,12 @@
                     Awesome
                     unter: <a href="https://fontawesome.com/privacy" target="_blank"
                         rel="noopener noreferrer">https://fontawesome.com/privacy</a>.</p>
-
-                <strong>Datenschutz</strong><br><br>
-                Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf
-                unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben
-                werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
-                ausdrückliche Zustimmung nicht an Dritte weitergegeben. <br>
-                Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail)
-                Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
-                nicht möglich. <br>
-                Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur
-                Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit
-                ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im
-                Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br>
-                </p>
-                <br>
-                <p>
-                    Created my free logo at <a href="https://logomakr.com" target="_blank">LogoMakr.com</a>
-                    The icons are provided by <a href="https://fontawesome.com/" rel="nofollow"
-                        target="_blank">FontAwesome</a> unter the <a href="https://fontawesome.com/license"
-                        target="_blank" rel="nofollow">Creative Commons Attribution 4.0 International license</a>.
-                    Icon die ich (Sebastian) verwendet habe:
-                    The icon from "https://https://www.iconsdb.com/guacamole-green-icons/clock-icon.html" is provided by
-                    icons8 as creative Commons Attributon-NoDerivs 3.0.
-
-
-                    The icon from "https://https://www.iconsdb.com/guacamole-green-icons/euro-icon.html" is provided as
-                    CC0
-                    1.0 Universal (CC0 1.0) Public Domain Dedication.
-
-
-                    The icon from
-                    "https://www.flaticon.com/free-icon/calories-calculator_2316952?term=calories&page=1&position=26"
-                    made
-                    by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a
-                        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-
-
-                    The icon from
-                    "https://www.flaticon.com/free-icon/levels_211915?term=level%20green&page=1&position=8&related_item_id=211915"
-                    made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-                        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-
-                </p>
-                <br>
-                <p> Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a
-                        href="https://www.kanzlei-hasselbach.de/standorte/bonn/">Kanzlei Hasselbach, Bonn</a>
-                </p>
             </div>
 
+        
+
     </main>
+
 
     <footer class="footer">
 
@@ -648,6 +613,8 @@
         </div>
 
     </footer>
+
+
 </body>
 
 </html>
